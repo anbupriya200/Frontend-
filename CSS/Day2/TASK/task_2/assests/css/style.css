@@ -1,0 +1,33 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+    
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+.zoho {
+    background-color: darkmagenta;
+    width: 400px;
+    height: 220px;
+}
+
+#tcs {
+    background-color: rgb(197, 149, 241);
+    width: 400px;
+    height: 200px;
+}
+
+.infosys {
+    background-color: rgb(118, 29, 201);
+    width: 400px;
+    height: 200px;
+}
+p {
+    color: rgb(180, 148, 114);
+}

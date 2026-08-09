@@ -1,0 +1,37 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+    
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+.head {
+    background-color: chocolate;
+    text-align: center;
+    padding: 10px;
+    width: 490px;
+    height: 60px;
+}
+
+.card {
+    background-color: rgb(245, 198, 181);
+    width: 490px;
+    height: 310px;
+}
+
+h4 {
+    color: darkviolet;
+    padding: 20px 0px;
+}
+ 
+img {
+    width: 140px;
+    height: 120px;
+}

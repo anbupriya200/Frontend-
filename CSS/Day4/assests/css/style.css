@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+.parent {
+    background-color: rgb(174, 111, 233);
+    color: brown;
+    height: 400px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}    
+
+.child {
+    background-color: aquamarine;
+    height: 100px;
+    width: 100px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

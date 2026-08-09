@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+.pic {
+    background-color: rgb(155, 114, 194);
+   height:  400px;
+   width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px;
+    margin: 200px;
+    transition: 0.5s;
+}
+
+.pic > img {
+    width: 200px;
+    height: 200px;
+    
+}
+.pic:hover  {
+    transform: scale(1.05) translateY(-8px);
+}

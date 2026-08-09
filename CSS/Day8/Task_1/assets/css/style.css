@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html { 
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+a {
+    text-decoration: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin : 20px; 
+}
+
+.button-container > button {
+    background-color: #f3e2e2;
+    color: #333;
+    border: 1px solid #857d7d;
+    padding: 10px 20px;
+    width: 100px;
+    height: 50px;
+    gap:10px;
+    cursor: pointer;
+}
+.button-container > button:hover {
+    background-color: #e99999;
+    color: #95d1f8;
+}

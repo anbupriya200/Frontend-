@@ -1,0 +1,38 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+    
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+.departmemt{
+    background-color: burlywood;
+    width: 220px;
+    height: 220px;
+}
+#cse{
+    color: crimson;
+    text-decoration: underline;
+}
+#it{
+    color: brown;
+    text-decoration: underline;
+}
+#ece{
+    color: brown;
+    text-decoration: underline;
+}
+#eee{
+    color: brown;
+    text-decoration: underline;
+}
+#mech{
+    color: brown;
+    text-decoration: underline;
+}

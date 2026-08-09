@@ -1,0 +1,42 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+.head {
+    background-color: rgb(201, 175, 226);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo > img {
+    width: 90px;
+    height: 90px;
+    margin-right: auto;
+    padding: 10px;
+}
+.navigation {
+    margin-left: auto;
+    gap: 10px;
+    padding: 10px;
+}
+
+aside {
+    width: 220px;
+    height: 1000px;
+    background-color: rgb(215, 197, 231);
+}

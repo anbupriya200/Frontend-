@@ -1,0 +1,100 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+a {
+    text-decoration: none;
+}
+.header-container {
+    background-color: #e76b6b;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+ 
+}
+.logo {
+    margin-right: auto;
+    padding: 40px;
+}
+
+.logo >img {
+    width: 40px;
+    height: 40px;
+}
+
+nav {
+    padding: 20px;
+    gap: 30px;
+}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eb9d9d;
+    height: 900px;
+}
+.card1 {
+    width: 300px;
+    height: 400px;
+    background-color: aquamarine;
+    padding: 10px;
+    position: relative;
+  
+}
+.badge{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: chocolate;
+    width: 40px;
+    
+}
+.card1 img { 
+    width:200px;
+    height:200px;
+    margin: 20px;
+    
+    
+}
+.card2 {
+    width: 300px;
+    height:400px;
+    background-color: aquamarine;
+    padding: 10px;
+    position: relative; 
+ 
+}
+.card2 img { 
+    width:200px;
+    height:200px;
+    margin: 20px;
+}
+
+.card3 {
+    width: 300px;
+    height: 400px;
+    background-color: aquamarine;
+    padding: 10px;
+    margin: 10px;
+    position: relative; 
+ 
+}
+
+.card3 img { 
+    width:200px;
+    height:200px;
+    margin: 20px;
+}

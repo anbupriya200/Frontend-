@@ -1,0 +1,35 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+    
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    
+}
+.logo img {
+    width: 40px;
+    height: 40px;
+}   
+#card img {
+    width: 90px;
+    height: 90px;
+} 
+.ID {
+    background-color: rgb(189, 141, 235);
+    border: solid 2px;
+    width: 400px;
+    height: 400px;
+    margin:  0px 300px;
+}
+p {
+    padding-top:20px;
+}
+h2 { 
+    padding: 10px;
+}

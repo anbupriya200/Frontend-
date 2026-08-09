@@ -1,0 +1,49 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+a {
+    text-decoration: none;
+}
+.text {
+    text-align: center;  
+    background-color: rgba(185, 159, 159, 0.308);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr  1fr 1fr 1fr  ;    
+    column-gap: 10px;    
+    row-gap: 10px;
+    background-color: rgba(102, 100, 100, 0.308);
+  
+     
+}
+
+.gallery1>img {
+    width: 400px;
+    height: 400px;
+
+}
+
+.gallery3>img {
+    width: 400px;
+    height: 400px;
+
+}
+
+.gallery2>img {
+    width: 600px;
+    height:600px;
+}
+
