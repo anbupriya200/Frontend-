@@ -1,0 +1,415 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+a {
+    text-decoration: none;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: beige;
+    padding: 20px;
+    height: 100px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.logo img {
+    width: 140px;
+    height: 140px;
+}
+.pic img {
+    width: 100vw;
+    height: 400px;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 10px;
+}
+
+.Shirt > img {
+    width: 70px;
+    height: 70px;
+    border-radius: 30px;
+    background-color: rgb(185, 184, 184);
+}
+
+.Shirt > p {
+    font-weight: bolder;
+}
+
+.for_you {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin : 20px;
+    gap: 20px;
+}
+
+.for_you > h3 {
+    margin-right: 500px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px;
+
+}
+.inner_card {
+    width: 250px;
+    height: 300px;
+    background-color: rgb(187, 187, 187);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+     
+}
+
+.inner_card > p {
+    padding: 10px;
+}
+
+.inner_card > img {
+    width: 250px;
+    height: 200px;
+} 
+
+.sale {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.sale img {
+    width: 30px;
+    height: 30px;
+}
+.card :hover {
+    transform: scale(1.1); 
+
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+ 
+
+
+@media (max-width:992px){
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    background-color: rgb(241, 241, 107);
+    height: 100px;
+    width: 100vw;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+}
+.pic img {
+    width: 100vw;
+    height: 400px;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.Shirt > img {
+    width: 70px;
+    height: 70px;
+    border-radius: 30px;
+    background-color: rgb(185, 184, 184);
+}
+.Shirt > p {
+    font-weight: bold ;
+}
+
+.for_you {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin : 20px;
+    gap: 20px;
+}
+
+.for_you > h3 {
+    margin-right: 500px;
+}
+
+.card {
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px;
+
+}
+.inner_card {
+    width: 250px;
+    height: 300px;
+    background-color: rgb(187, 187, 187);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+     
+}
+
+.inner_card > p {
+    padding: 10px;
+}
+
+.inner_card > img {
+    width: 250px;
+    height: 200px;
+} 
+
+.sale {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.sale img {
+    width: 30px;
+    height: 30px;
+}
+.card :hover {
+    transform: scale(1.1); 
+
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+}
+
+@media (max-width:768px){
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     gap: 100px;
+    background-color: rgb(59, 59, 52);
+    height: 100px;
+    width: 100vw;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+}
+.pic img {
+    width: 100vw;
+    height: 400px;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.Shirt > img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: rgb(185, 184, 184);
+}
+
+.Shirt > p {
+    font-weight: 40;
+}
+
+
+.for_you > h3 {
+    margin-right: 500px;
+}
+
+.card {
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    place-items: center;
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px;
+    gap: 10px;
+
+}
+.inner_card {
+    width: 250px;
+    height: 300px;
+    background-color: rgb(187, 187, 187);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+     
+}
+
+.inner_card > p {
+    padding: 10px;
+}
+
+.inner_card > img {
+    width: 250px;
+    height: 200px;
+} 
+
+.sale {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.sale img {
+    width: 30px;
+    height: 30px;
+}
+.card :hover {
+    transform: scale(1.1); 
+
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+}
+
+@media (max-width:576px){
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    background-color: rgb(194, 236, 243);
+    height: 100px;
+    width: 100vw;
+}
+
+.logo img {
+    width: 70px;
+    height:70px;
+}
+.pic img {
+    width: 100vw;
+    height: 400px;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+    margin-top: 10px;
+}
+
+.Shirt > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: rgb(185, 184, 184);
+}
+
+.Shirt > p {
+    
+    font-size: small;
+}
+
+
+.for_you > h3 {
+    margin-right: 500px;
+}
+
+.card {
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px;
+
+}
+.inner_card {
+    width: 250px;
+    height: 300px;
+    background-color: rgb(187, 187, 187);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+     
+}
+
+.inner_card > p {
+    padding: 10px;
+}
+
+.inner_card > img {
+    width: 250px;
+    height: 200px;
+} 
+
+.sale {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.sale img {
+    width: 30px;
+    height: 30px;
+}
+.card :hover {
+    transform: scale(1.1); 
+
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+}
