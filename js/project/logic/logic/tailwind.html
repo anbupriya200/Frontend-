@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS – Complete Study Guide | Frontend Learning Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-badge">HUB</span>
+        <span>Frontend Study</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="html.html" class="nav-link">HTML</a></li>
+        <li><a href="css.html" class="nav-link">CSS</a></li>
+        <li><a href="javascript.html" class="nav-link">JavaScript</a></li>
+        <li><a href="tailwind.html" class="nav-link active">Tailwind CSS</a></li>
+        <li><a href="source.html" class="nav-link">Source Code</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-icon open-search-trigger" title="Search topics (Ctrl+K)">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </button>
+        <button class="btn-icon" id="themeToggleBtn" title="Toggle Light/Dark Theme"></button>
+        <button class="btn-icon hamburger-btn" id="hamburgerBtn" title="Toggle Navigation Menu">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-bar">
+    <div class="breadcrumb-container">
+      <div class="breadcrumb-item"><a href="index.html">Home</a></div>
+      <span class="breadcrumb-separator">/</span>
+      <div class="breadcrumb-item">Tailwind CSS Complete Study Guide</div>
+    </div>
+  </nav>
+
+  <main class="main-wrapper">
+    <section class="page-header">
+      <div class="page-title-badge tailwind-badge" style="background:var(--tailwind-gradient); color:white;">
+        ≈ Utility-First Modern UI Framework
+      </div>
+      <h1 class="page-title">Tailwind CSS – Complete Study Guide</h1>
+      <p class="page-subtitle">Master utility-first CSS styling. Compose modern responsive cards, buttons, navbars, and forms quickly without leaving your HTML markup.</p>
+    </section>
+
+    <div class="study-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar-sticky">
+        <div class="sidebar-title">Tailwind Topics (24)</div>
+        <ul class="sidebar-nav" style="max-height: 480px; overflow-y: auto;">
+          <li><a href="#tw-intro" class="sidebar-link"><span>1. Tailwind Intro</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-installation" class="sidebar-link"><span>2. Installation / CDN</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-utility-classes" class="sidebar-link"><span>3. Utility Classes</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-colors" class="sidebar-link"><span>4. Colors</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-typography" class="sidebar-link"><span>5. Typography</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-spacing" class="sidebar-link"><span>6. Spacing</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-width-height" class="sidebar-link"><span>7. Width & Height</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-backgrounds" class="sidebar-link"><span>8. Backgrounds</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-borders" class="sidebar-link"><span>9. Borders</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-border-radius" class="sidebar-link"><span>10. Border Radius</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-flexbox" class="sidebar-link"><span>11. Flexbox in Tailwind</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-grid" class="sidebar-link"><span>12. Grid in Tailwind</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-responsive" class="sidebar-link"><span>13. Responsive Design</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-hover-states" class="sidebar-link"><span>14. Hover States</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-focus-states" class="sidebar-link"><span>15. Focus States</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-shadows" class="sidebar-link"><span>16. Shadows</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-positioning" class="sidebar-link"><span>17. Positioning</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-sizing" class="sidebar-link"><span>18. Sizing</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-breakpoints" class="sidebar-link"><span>19. Breakpoints</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-cards" class="sidebar-link"><span>20. Cards Component</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-buttons" class="sidebar-link"><span>21. Buttons Component</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-navbar" class="sidebar-link"><span>22. Navbar Component</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-forms" class="sidebar-link"><span>23. Forms Component</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-layouts" class="sidebar-link"><span>24. Layout Templates</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#tw-interview" class="sidebar-link" style="color: var(--brand-primary); font-weight:700;"><span>💡 10 Interview Q&As</span></a></li>
+        </ul>
+      </aside>
+
+      <!-- Content Area -->
+      <div class="content-area">
+
+        <!-- 1. Tailwind Intro -->
+        <article class="topic-card glow-card" id="tw-intro">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 01</span>
+              <h2 class="topic-title">Tailwind CSS Introduction</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-intro" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Tailwind CSS is a utility-first CSS framework providing low-level atomic classes to compose custom UI designs directly inside HTML markup.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Detailed Architecture & JIT Compiler</div>
+            <p class="explanation-text">
+              Unlike component-based frameworks (like Bootstrap), Tailwind provides atomic utility primitives. Its Just-In-Time (JIT) compiler scans your HTML files at build time and generates only the exact CSS classes used, resulting in ultra-compact production CSS bundles.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Tailwind Component Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Interactive Tailwind Editor</span><span>Live Component Render</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div class="p-6 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl shadow-lg"&gt;
+    &lt;h3 class="text-xl font-bold"&gt;Tailwind Card&lt;/h3&gt;
+    &lt;p class="text-sm opacity-90 mt-1"&gt;Utility-first modern styling!&lt;/p&gt;
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>No need to write custom CSS class names or invent naming conventions like BEM.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Thinking utility classes make HTML bloated; JIT build tools produce minimal production bundles.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Installation / CDN -->
+        <article class="topic-card glow-card" id="tw-installation">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 02</span>
+              <h2 class="topic-title">Installation & Play CDN</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-installation" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Tailwind can be included via the Play CDN script for rapid prototyping or installed via PostCSS CLI/Vite for production build pipelines.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">CDN vs PostCSS Production Setup</div>
+            <p class="explanation-text">
+              • <strong>Play CDN</strong>: Add <code>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</code> to document <code>&lt;head&gt;</code> (great for learning and sandboxes).<br>
+              • <strong>PostCSS CLI / Vite</strong>: Installs `tailwindcss` via npm and generates purged production CSS.
+            </p>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Do not use the Play CDN script in production environments.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Forgetting to configure `content` paths in `tailwind.config.js` when building for production.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Utility Classes -->
+        <article class="topic-card glow-card" id="tw-utility-classes">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 03</span>
+              <h2 class="topic-title">Utility Classes Concept</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-utility-classes" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Utility classes are single-purpose helper classes (e.g. <code>p-4</code>, <code>text-center</code>, <code>font-bold</code>) combined to build complex UI widgets.
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Colors -->
+        <article class="topic-card glow-card" id="tw-colors">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 04</span>
+              <h2 class="topic-title">Tailwind Color Palettes</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-colors" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Tailwind features built-in color shades from 50 (lightest) to 950 (darkest) across text (<code>text-cyan-500</code>), backgrounds (<code>bg-slate-900</code>), and borders (<code>border-cyan-400</code>).
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Typography -->
+        <article class="topic-card glow-card" id="tw-typography">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 05</span>
+              <h2 class="topic-title">Typography Utilities</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-typography" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Controls font sizes (<code>text-sm</code>, <code>text-2xl</code>), weights (<code>font-bold</code>), tracking (<code>tracking-wide</code>), and leadings (<code>leading-relaxed</code>).
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Spacing -->
+        <article class="topic-card glow-card" id="tw-spacing">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 06</span>
+              <h2 class="topic-title">Spacing Utilities (Padding & Margin)</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-spacing" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Spacing uses a 4-px scale (e.g. <code>p-4</code> = 16px, <code>mt-2</code> = 8px, <code>mx-auto</code> = horizontal auto center).
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Width & Height -->
+        <article class="topic-card glow-card" id="tw-width-height">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 07</span>
+              <h2 class="topic-title">Width & Height Sizing</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-width-height" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Sizing utilities include fractional widths (<code>w-1/2</code>, <code>w-full</code>), screen sizes (<code>h-screen</code>, <code>w-screen</code>), and max widths (<code>max-w-xl</code>).
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Backgrounds -->
+        <article class="topic-card glow-card" id="tw-backgrounds">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 08</span>
+              <h2 class="topic-title">Backgrounds & Gradients</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-backgrounds" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Gradient utilities like <code>bg-gradient-to-r from-cyan-500 to-blue-500</code> create smooth color transitions effortlessly.
+            </div>
+          </div>
+        </article>
+
+        <!-- 9-10: Borders & Radius -->
+        <article class="topic-card glow-card" id="tw-borders">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 09</span>
+              <h2 class="topic-title">Borders & Divide Utilities</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-borders" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Controls border stroke widths (<code>border-2</code>), colors (<code>border-cyan-500</code>), and divider lines between elements (<code>divide-y</code>).
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="tw-border-radius">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 10</span>
+              <h2 class="topic-title">Border Radius Utilities</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-border-radius" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Rounds corners using <code>rounded-md</code>, <code>rounded-xl</code>, or <code>rounded-full</code>.
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. Flexbox in Tailwind -->
+        <article class="topic-card glow-card" id="tw-flexbox">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 11</span>
+              <h2 class="topic-title">Flexbox in Tailwind</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-flexbox" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Class Breakdown</div>
+            <p class="explanation-text">
+              • <code>flex</code> &rarr; <code>display: flex;</code><br>
+              • <code>justify-between</code> &rarr; <code>justify-content: space-between;</code><br>
+              • <code>items-center</code> &rarr; <code>align-items: center;</code><br>
+              • <code>gap-4</code> &rarr; <code>gap: 1rem; (16px)</code>
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Flex Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Tailwind Flex Editor</span><span>Live Render</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div class="flex justify-between items-center gap-4 p-4 bg-slate-800 rounded-lg text-white"&gt;
+    &lt;div class="px-4 py-2 bg-cyan-500 rounded-lg font-bold"&gt;Flex Item 1&lt;/div&gt;
+    &lt;div class="px-4 py-2 bg-cyan-500 rounded-lg font-bold"&gt;Flex Item 2&lt;/div&gt;
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12. Grid in Tailwind -->
+        <article class="topic-card glow-card" id="tw-grid">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 12</span>
+              <h2 class="topic-title">CSS Grid in Tailwind</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-grid" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Grid layout utilities: <code>grid</code>, <code>grid-cols-3</code>, <code>gap-6</code>, <code>col-span-2</code>.
+            </div>
+          </div>
+        </article>
+
+        <!-- 13. Responsive Design -->
+        <article class="topic-card glow-card" id="tw-responsive">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 13</span>
+              <h2 class="topic-title">Mobile-First Responsive Design</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-responsive" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Tailwind uses mobile-first breakpoint prefixes: <code>sm:</code> (640px+), <code>md:</code> (768px+), <code>lg:</code> (1024px+), <code>xl:</code> (1280px+).
+            </div>
+          </div>
+        </article>
+
+        <!-- 14-16: Hover, Focus & Shadows -->
+        <article class="topic-card glow-card" id="tw-hover-states">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 14</span>
+              <h2 class="topic-title">Hover & State Variants</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-hover-states" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              State modifiers like <code>hover:bg-cyan-600</code>, <code>hover:scale-105</code>, <code>transition-all</code> trigger interactive hover animations.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="tw-focus-states">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 15</span>
+              <h2 class="topic-title">Focus Ring Utilities</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-focus-states" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Focus state utilities: <code>focus:outline-none</code>, <code>focus:ring-2</code>, <code>focus:ring-cyan-500</code> for accessible inputs.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="tw-shadows">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 16</span>
+              <h2 class="topic-title">Box Shadow & Glow Utilities</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-shadows" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Drop shadow utilities: <code>shadow-sm</code>, <code>shadow-md</code>, <code>shadow-xl</code>, <code>shadow-cyan-500/50</code>.
+            </div>
+          </div>
+        </article>
+
+        <!-- 17-19: Positioning, Sizing & Breakpoints -->
+        <article class="topic-card glow-card" id="tw-positioning">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 17</span>
+              <h2 class="topic-title">Positioning Utilities</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-positioning" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Positioning classes: <code>relative</code>, <code>absolute</code>, <code>fixed</code>, <code>sticky</code>, <code>top-0</code>, <code>z-50</code>.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="tw-sizing">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 18</span>
+              <h2 class="topic-title">Container Sizing Boundaries</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-sizing" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Container constraints: <code>min-h-screen</code>, <code>max-w-7xl</code>, <code>mx-auto</code>.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="tw-breakpoints">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 19</span>
+              <h2 class="topic-title">Tailwind Breakpoint Reference</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-breakpoints" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Standard screen breakpoints: <code>sm</code> (640px), <code>md</code> (768px), <code>lg</code> (1024px), <code>xl</code> (1280px), <code>2xl</code> (1536px).
+            </div>
+          </div>
+        </article>
+
+        <!-- 20-24: Components & Templates -->
+        <article class="topic-card glow-card" id="tw-cards">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 20</span>
+              <h2 class="topic-title">Tailwind Cards Component</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-cards" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Compose card components combining padding (<code>p-6</code>), dark background (<code>bg-slate-900</code>), border (<code>border border-slate-800</code>), rounded corners (<code>rounded-xl</code>), and shadow.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="tw-buttons">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 21</span>
+              <h2 class="topic-title">Tailwind Buttons Component</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-buttons" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Interactive button variants combining <code>px-5 py-2.5 bg-cyan-500 hover:bg-cyan-600 text-white font-bold rounded-lg transition-all</code>.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="tw-navbar">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 22</span>
+              <h2 class="topic-title">Tailwind Sticky Navbar</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-navbar" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Sticky backdrop-blur headers: <code>sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800</code>.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="tw-forms">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 23</span>
+              <h2 class="topic-title">Tailwind Forms Component</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-forms" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Form inputs with focus rings: <code>w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none</code>.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="tw-layouts">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 24</span>
+              <h2 class="topic-title">Tailwind Layout Templates</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="tw-layouts" data-category="tailwind">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--tailwind-color);">
+              Responsive dashboard templates utilizing <code>grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto px-4</code>.
+            </div>
+          </div>
+        </article>
+
+        <!-- Tailwind Interview Questions Accordion -->
+        <section class="interview-section" id="tw-interview">
+          <div class="interview-header">
+            <h2 class="interview-title">💡 10 Essential Tailwind CSS Interview Questions</h2>
+            <p style="color:var(--text-secondary); margin-top:0.25rem;">Key concepts asked in technical frontend interviews.</p>
+          </div>
+
+          <div class="accordion-list">
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>1. What is utility-first CSS?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                Utility-first CSS uses single-purpose helper classes directly in HTML markup to construct custom UI components without writing custom CSS selectors.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>2. How does Tailwind handle responsive breakpoints?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                Tailwind uses mobile-first media query prefixes like <code>sm:</code> (640px+), <code>md:</code> (768px+), <code>lg:</code> (1024px+).
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>3. How does the JIT compiler optimize production bundle sizes?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                Tailwind's Just-In-Time engine scans your project files and generates only the exact CSS classes used in your markup, resulting in tiny production CSS bundles (under 10KB).
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-brand-title">Frontend Study Hub</div>
+        <div class="footer-brand-desc">Master Tailwind CSS utility classes and modern responsive UI development.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home Dashboard</a></li>
+          <li><a href="html.html">HTML Guide</a></li>
+          <li><a href="css.html">CSS Guide</a></li>
+          <li><a href="javascript.html">JavaScript Guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="source.html">Source Code Viewer</a></li>
+          <li><a href="#tw-interview">Tailwind Interview Q&A</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Frontend Development Learning Hub.</div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

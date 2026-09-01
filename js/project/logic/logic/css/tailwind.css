@@ -1,0 +1,53 @@
+/* Tailwind CSS Page Specific Styles */
+.tailwind-badge {
+  background-color: var(--tailwind-bg);
+  color: var(--tailwind-color);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.utility-class-tag {
+  display: inline-block;
+  background-color: var(--bg-tertiary);
+  color: var(--tailwind-color);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  margin-right: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.tailwind-live-preview {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Sample Tailwind UI Components inside preview */
+.tw-demo-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  max-width: 320px;
+}
+
+.tw-demo-btn {
+  background-color: #06b6d4;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.tw-demo-btn:hover {
+  background-color: #0891b2;
+}

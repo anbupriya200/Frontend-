@@ -1,0 +1,135 @@
+/* Frontend Mastery Hub - Complete Dark Theme Stylesheet */
+
+:root {
+  --bg-main: #000000;
+  --bg-card: #080810;
+  --bg-editor: #000000;
+  --bg-console: #020204;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #1e293b;
+}
+
+/* Force Dark Theme Default */
+body {
+  background-color: var(--bg-main) !important;
+  color: var(--text-main) !important;
+  font-family: 'Inter', sans-serif;
+}
+
+/* OLED Black Cards */
+.glass-card, .topic-card {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8) !important;
+}
+
+.glass-card:hover, .topic-card:hover {
+  border-color: #6366f1 !important;
+  box-shadow: 0 12px 40px 0 rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Pure Black Code Editors */
+.code-editor-box, pre {
+  background-color: var(--bg-editor) !important;
+  border: 1px solid #1e293b !important;
+}
+
+/* Terminal Console Box */
+.terminal-console-box {
+  background-color: var(--bg-console) !important;
+  border: 1px solid #0f172a !important;
+}
+
+/* Syntax Highlighting */
+.token-keyword { color: #818cf8 !important; font-weight: 700; }
+.token-string { color: #34d399 !important; }
+.token-number { color: #fbbf24 !important; font-weight: 600; }
+.token-function { color: #60a5fa !important; font-weight: 600; }
+.token-comment { color: #475569 !important; font-style: italic; }
+.token-operator { color: #f43f5e !important; }
+.token-tag { color: #fb923c !important; font-weight: 700; }
+.token-attr { color: #38bdf8 !important; }
+
+/* Custom Dark Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Hide Scrollbar helper */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Input Fields in Dark Theme */
+input, select, textarea {
+  background-color: #05050a !important;
+  border-color: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+input:focus {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3) !important;
+}
+
+/* Toast Notifications Animation */
+@keyframes toastSlideIn {
+  from {
+    transform: translateY(100%) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.toast-enter {
+  animation: toastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Light Theme Overrides (if toggled) */
+body.light-theme {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-editor: #0f172a;
+  --bg-console: #020617;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --border-color: #e2e8f0;
+}
+
+body.light-theme .glass-card, body.light-theme .topic-card {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-theme header {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: #e2e8f0 !important;
+}
+
+body.light-theme h1, body.light-theme h2, body.light-theme h3 {
+  color: #0f172a !important;
+}

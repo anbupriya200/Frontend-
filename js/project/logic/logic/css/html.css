@@ -1,0 +1,48 @@
+/* HTML Page Specific Styles */
+.html-badge {
+  background-color: var(--html-bg);
+  color: var(--html-color);
+  border: 1px solid rgba(227, 79, 38, 0.2);
+}
+
+.browser-diagram-container {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.diagram-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.flow-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.flow-step-box {
+  background-color: var(--bg-tertiary);
+  border: 2px solid var(--html-color);
+  color: var(--text-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.flow-arrow {
+  color: var(--html-color);
+  font-size: 1.25rem;
+  font-weight: bold;
+}

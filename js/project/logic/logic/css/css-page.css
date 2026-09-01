@@ -1,0 +1,118 @@
+/* CSS Page Specific Styles */
+.css-badge {
+  background-color: var(--css-bg);
+  color: var(--css-color);
+  border: 1px solid rgba(21, 114, 182, 0.2);
+}
+
+/* Interactive CSS Box Model Visualizer */
+.box-model-diagram {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.box-model-outer {
+  background-color: #fee2e2;
+  border: 2px dashed #ef4444;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  color: #991b1b;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+[data-theme="dark"] .box-model-outer {
+  background-color: #451212;
+  color: #fca5a5;
+}
+
+.box-model-border {
+  background-color: #fef3c7;
+  border: 3px solid #f59e0b;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  color: #92400e;
+}
+
+[data-theme="dark"] .box-model-border {
+  background-color: #451a03;
+  color: #fde68a;
+}
+
+.box-model-padding {
+  background-color: #dcfce7;
+  border: 2px dashed #22c55e;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  color: #166534;
+}
+
+[data-theme="dark"] .box-model-padding {
+  background-color: #064e3b;
+  color: #86efac;
+}
+
+.box-model-content {
+  background-color: #dbeafe;
+  border: 2px solid #3b82f6;
+  padding: 1.25rem;
+  border-radius: var(--radius-sm);
+  color: #1e40af;
+  font-size: 1.1rem;
+}
+
+[data-theme="dark"] .box-model-content {
+  background-color: #1e3a8a;
+  color: #93c5fd;
+}
+
+.box-model-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+/* Visual Layout Containers for Flex/Grid demo */
+.demo-flex-container {
+  display: flex;
+  gap: 1rem;
+  background-color: var(--bg-tertiary);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--brand-primary);
+}
+
+.demo-flex-item {
+  background-color: var(--brand-primary);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.demo-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  background-color: var(--bg-tertiary);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+}
+
+.demo-grid-item {
+  background-color: #8b5cf6;
+  color: white;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  font-weight: 600;
+}

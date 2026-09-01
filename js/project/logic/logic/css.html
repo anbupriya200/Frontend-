@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS – Complete Study Guide | Frontend Learning Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/css-page.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-badge">HUB</span>
+        <span>Frontend Study</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="html.html" class="nav-link">HTML</a></li>
+        <li><a href="css.html" class="nav-link active">CSS</a></li>
+        <li><a href="javascript.html" class="nav-link">JavaScript</a></li>
+        <li><a href="tailwind.html" class="nav-link">Tailwind CSS</a></li>
+        <li><a href="source.html" class="nav-link">Source Code</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-icon open-search-trigger" title="Search topics (Ctrl+K)">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </button>
+        <button class="btn-icon" id="themeToggleBtn" title="Toggle Light/Dark Theme"></button>
+        <button class="btn-icon hamburger-btn" id="hamburgerBtn" title="Toggle Navigation Menu">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-bar">
+    <div class="breadcrumb-container">
+      <div class="breadcrumb-item"><a href="index.html">Home</a></div>
+      <span class="breadcrumb-separator">/</span>
+      <div class="breadcrumb-item">CSS Complete Study Guide</div>
+    </div>
+  </nav>
+
+  <main class="main-wrapper">
+    <section class="page-header">
+      <div class="page-title-badge css-badge" style="background:var(--css-gradient); color:white;">
+        🎨 CSS3 Architecture, Layouts & Animations
+      </div>
+      <h1 class="page-title">CSS – Complete Study Guide</h1>
+      <p class="page-subtitle">Master Cascading Style Sheets. Learn specificity calculation, colors, Box Model geometry, positioning, Flexbox, CSS Grid, and fluid responsive design.</p>
+    </section>
+
+    <!-- Visual CSS Box Model Diagram -->
+    <div class="box-model-diagram glow-card" id="css-box-model-banner">
+      <div style="font-weight: 800; font-size: 1.15rem; margin-bottom: 1rem; color: var(--text-primary);">
+        📦 CSS Box Model Geometry (Content &rarr; Padding &rarr; Border &rarr; Margin)
+      </div>
+      <div class="box-model-outer">
+        <span class="box-model-label">MARGIN (External spacing outside border)</span>
+        <div class="box-model-border">
+          <span class="box-model-label">BORDER (Outer boundary stroke line)</span>
+          <div class="box-model-padding">
+            <span class="box-model-label">PADDING (Internal padding space inside border)</span>
+            <div class="box-model-content">
+              CONTENT (Text / Inner Elements)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="study-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar-sticky">
+        <div class="sidebar-title">CSS Topics (20)</div>
+        <ul class="sidebar-nav">
+          <li><a href="#css-intro" class="sidebar-link"><span>1. CSS Introduction</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-inline" class="sidebar-link"><span>2. Inline CSS</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-internal" class="sidebar-link"><span>3. Internal CSS</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-external" class="sidebar-link"><span>4. External CSS</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-selectors" class="sidebar-link"><span>5. CSS Selectors</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-colors" class="sidebar-link"><span>6. Colors & Swatches</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-backgrounds" class="sidebar-link"><span>7. Backgrounds</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-fonts" class="sidebar-link"><span>8. Fonts & Text</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-box-model" class="sidebar-link"><span>9. Box Model</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-margin" class="sidebar-link"><span>10. Margin</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-padding" class="sidebar-link"><span>11. Padding</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-border" class="sidebar-link"><span>12. Border</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-display" class="sidebar-link"><span>13. Display Property</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-position" class="sidebar-link"><span>14. Position Property</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-flexbox" class="sidebar-link"><span>15. Flexbox</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-grid" class="sidebar-link"><span>16. CSS Grid</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-pseudo-classes" class="sidebar-link"><span>17. Pseudo Classes</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-pseudo-elements" class="sidebar-link"><span>18. Pseudo Elements</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-media-queries" class="sidebar-link"><span>19. Media Queries</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-responsive" class="sidebar-link"><span>20. Responsive Design</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#css-interview" class="sidebar-link" style="color: var(--brand-primary); font-weight:700;"><span>💡 12 Interview Q&As</span></a></li>
+        </ul>
+      </aside>
+
+      <!-- Content Area -->
+      <div class="content-area">
+
+        <!-- 1. CSS Introduction -->
+        <article class="topic-card glow-card" id="css-intro">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 01</span>
+              <h2 class="topic-title">CSS Introduction</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-intro" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              CSS (Cascading Style Sheets) describes how HTML elements are styled and presented visually across screen sizes and device types.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Detailed Explanation</div>
+            <p class="explanation-text">
+              CSS works by matching selectors to HTML elements and applying key-value styling rules (e.g. <code>color</code>, <code>font-size</code>, <code>background</code>). The term "Cascading" means rules flow downwards based on specificity priority and document order.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>CSS Live Sandbox</span><span>Rendered Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div style="background:linear-gradient(135deg, #3b82f6, #8b5cf6); color:white; padding:1.5rem; border-radius:12px; font-weight:bold; text-align:center; box-shadow:0 4px 15px rgba(59,130,246,0.4);"&gt;
+    Interactive CSS Component
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>CSS separates document visual styling presentation from raw HTML semantic structure.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Forgetting colons after properties or semicolons after style rule values.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Inline CSS -->
+        <article class="topic-card glow-card" id="css-inline">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 02</span>
+              <h2 class="topic-title">Inline CSS</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-inline" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              Inline CSS applies styling directly to a single HTML tag via the <code>style="..."</code> attribute.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Technical Analysis & Specificity</div>
+            <p class="explanation-text">
+              Inline CSS carries the highest specificity score (1000), overriding internal and external CSS rules regardless of stylesheet order.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Inline CSS Sandbox</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;h3 style="color:#f97316; background:#1e293b; padding:10px; border-radius:6px;"&gt;
+  Element styled directly via inline CSS attribute!
+&lt;/h3&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Useful for quick testing or dynamic JavaScript inline style updates.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Overusing inline CSS across production pages, making maintenance difficult and inflating code sizes.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Internal CSS -->
+        <article class="topic-card glow-card" id="css-internal">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 03</span>
+              <h2 class="topic-title">Internal CSS</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-internal" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              Internal CSS places rule blocks inside <code>&lt;style&gt;</code> tags embedded in document <code>&lt;head&gt;</code>.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Internal CSS Sandbox</span><span>Live Render</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;style&gt;
+  .demo-card { background: #1e293b; color: #3b82f6; padding: 12px; border-radius: 8px; font-weight: bold; }
+&lt;/style&gt;
+&lt;div class="demo-card"&gt;Styled using embedded internal &amp;lt;style&amp;gt; tag&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Ideal for single-page email templates or isolated landing pages.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Duplicating identical <code>&lt;style&gt;</code> blocks across multiple separate HTML files.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. External CSS -->
+        <article class="topic-card glow-card" id="css-external">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 04</span>
+              <h2 class="topic-title">External CSS Stylesheets</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-external" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              External CSS links separate <code>.css</code> stylesheet files to HTML pages via <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Industry Standard Best Practices</div>
+            <p class="explanation-text">
+              External CSS is the industry gold standard. Browsers cache <code>.css</code> files locally after the first download, drastically accelerating subsequent page load speeds across multi-page web applications.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>External CSS Syntax</span><span>HTML Link Tag</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;!-- Placed inside &lt;head&gt; --&gt;
+&lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;div style="color:#10b981; font-weight:bold;"&gt;✓ External stylesheet link tag syntax validated&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Allows updating site-wide designs by modifying a single <code>.css</code> file.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Broken relative file path references (e.g. <code>href="style.css"</code> instead of <code>href="css/style.css"</code>).</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. CSS Selectors -->
+        <article class="topic-card glow-card" id="css-selectors">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 05</span>
+              <h2 class="topic-title">CSS Selectors & Specificity</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-selectors" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              CSS Selectors target HTML elements via tag names (<code>h1</code>), classes (<code>.title</code>), element IDs (<code>#main</code>), attributes (<code>[type="text"]</code>), or combinators (<code>div > p</code>).
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Specificity Ranking Breakdown</div>
+            <p class="explanation-text">
+              1. <code>!important</code>: Overrides all specificity rules.<br>
+              2. Inline Style (1000): <code>style="..."</code><br>
+              3. ID Selector (0100): <code>#header</code><br>
+              4. Class & Attribute Selector (0010): <code>.btn</code>, <code>[type="submit"]</code>, <code>:hover</code><br>
+              5. Element Tag Selector (0001): <code>div</code>, <code>p</code>, <code>h1</code>
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Selectors Sandbox</span><span>Live Result</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;style&gt;
+  #special-heading { color: #f97316; } /* ID Selector (0100) */
+  .badge-text { font-size: 1.1rem; font-weight: bold; } /* Class Selector (0010) */
+&lt;/style&gt;
+&lt;h3 id="special-heading" class="badge-text"&gt;Targeted via CSS Selectors&lt;/h3&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Use class selectors (`.class`) for reusable component styling.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Overusing `!important` to force styles, leading to specificity wars in CSS.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Colors with Swatch Tool -->
+        <article class="topic-card glow-card" id="css-colors">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 06</span>
+              <h2 class="topic-title">Colors & Color Formats</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-colors" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              CSS color formats include Hexadecimal (<code>#3b82f6</code>), RGB/RGBA (<code>rgba(59, 130, 246, 0.5)</code>), HSL/HSLA, and named color keywords.
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="section-title">Interactive Color Palette Explorer</div>
+            <div class="color-swatch-grid">
+              <div class="color-swatch-card">
+                <div class="swatch-color-box" style="background:#3b82f6;"></div>
+                <div class="swatch-label">#3b82f6<br>Primary Blue</div>
+              </div>
+              <div class="color-swatch-card">
+                <div class="swatch-color-box" style="background:#f97316;"></div>
+                <div class="swatch-label">#f97316<br>Flame Orange</div>
+              </div>
+              <div class="color-swatch-card">
+                <div class="swatch-color-box" style="background:#10b981;"></div>
+                <div class="swatch-label">#10b981<br>Emerald Green</div>
+              </div>
+              <div class="color-swatch-card">
+                <div class="swatch-color-box" style="background:#8b5cf6;"></div>
+                <div class="swatch-label">#8b5cf6<br>Royal Purple</div>
+              </div>
+              <div class="color-swatch-card">
+                <div class="swatch-color-box" style="background:#06b6d4;"></div>
+                <div class="swatch-label">#06b6d4<br>Cyber Cyan</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Use RGBA (e.g. <code>rgba(0,0,0,0.5)</code>) to control color transparency alpha channel values.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Creating low-contrast text/background combinations violating WCAG contrast standards.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Backgrounds -->
+        <article class="topic-card glow-card" id="css-backgrounds">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 07</span>
+              <h2 class="topic-title">CSS Backgrounds & Gradients</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-backgrounds" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              CSS background properties control element colors, background images, positioning, repeat options, and vibrant linear/radial gradients.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Detailed Properties Breakdown</div>
+            <p class="explanation-text">
+              • <code>background-color</code>: Solid background color.<br>
+              • <code>background-image: linear-gradient(135deg, #3b82f6, #8b5cf6)</code>: Vibrant color transitions.<br>
+              • <code>background-size: cover</code>: Scales background image to fill container completely.<br>
+              • <code>background-position: center</code>: Centers background image horizontally and vertically.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Gradients Sandbox</span><span>Live Render</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div style="background:linear-gradient(135deg, #f97316, #ec4899); color:white; padding:1.5rem; border-radius:12px; text-align:center; font-weight:bold; box-shadow:0 4px 15px rgba(249,115,22,0.4);"&gt;
+  Vibrant Gradient Background Card
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Pair <code>background-size: cover</code> with <code>background-position: center</code> for full-bleed hero banners.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Forgetting `background-repeat: no-repeat`, causing image tiles across large container spaces.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Fonts & Typography -->
+        <article class="topic-card glow-card" id="css-fonts">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 08</span>
+              <h2 class="topic-title">Fonts & Typography</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-fonts" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              CSS typography rules control font family stacks, font sizes, line heights, letter spacing, and text alignments.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Typography Rules Breakdown</div>
+            <p class="explanation-text">
+              • <code>font-family: 'Inter', sans-serif</code>: Primary font family stack with fallback options.<br>
+              • <code>font-size: 1rem / 16px</code>: Text font sizing (use relative `rem` units for responsiveness).<br>
+              • <code>line-height: 1.6</code>: Vertical line height spacing for optimal reading comfort.<br>
+              • <code>letter-spacing: 0.05em</code>: Character tracking spacing.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Typography Sandbox</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;p style="font-family:'Courier New', monospace; font-size:1.1rem; color:#38bdf8; line-height:1.6; letter-spacing:1px;"&gt;
+  Custom Typography: Monospaced font with custom line-height and letter-spacing!
+&lt;/p&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Use <code>rem</code> units for font sizes to support browser accessibility zoom settings.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Hardcoding static `px` font sizes on body text, breaking user browser zoom preferences.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Box Model -->
+        <article class="topic-card glow-card" id="css-box-model">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 09</span>
+              <h2 class="topic-title">CSS Box Model Sizing</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-box-model" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              The Box Model governs how every HTML element is calculated as a rectangular box comprising Content, Padding, Border, and Margin.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Box Sizing Mode Comparison</div>
+            <p class="explanation-text">
+              • <code>box-sizing: content-box</code> (Default): Total Width = Content Width + Padding + Border.<br>
+              • <code>box-sizing: border-box</code> (Modern Standard): Total Width = Specified Width (Padding and Border are included inside the specified width).
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Box Sizing Sandbox</span><span>Live Box</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div style="box-sizing:border-box; width:200px; padding:20px; border:4px solid #3b82f6; background:#1e293b; color:white; text-align:center;"&gt;
+  Width: 200px (Border-Box includes padding &amp; border inside!)
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Always set <code>*, *::before, *::after { box-sizing: border-box; }</code> in your CSS reset baseline.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Assuming `width: 100%` won't overflow containers when adding padding under `content-box`.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Margin -->
+        <article class="topic-card glow-card" id="css-margin">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 10</span>
+              <h2 class="topic-title">CSS Margin & Collapse</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-margin" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              Margin creates transparent external spacing outside an element's border, pushing neighboring elements away.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Detailed Features & Margin Collapse</div>
+            <p class="explanation-text">
+              • <code>margin: auto</code>: Horizontally centers block elements with a defined width.<br>
+              • <strong>Margin Collapse</strong>: Top and bottom vertical margins of adjacent block elements collapse into a single margin equal to the largest individual margin value.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Margin Sandbox</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div style="background:#0f172a; padding:10px; border-radius:8px;"&gt;
+  &lt;div style="background:#3b82f6; color:white; width:60%; margin:0 auto; padding:10px; text-align:center; border-radius:4px;"&gt;
+    Centered via margin: 0 auto;
+  &lt;/div&gt;
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li><code>margin: 0 auto</code> requires a fixed or max-width declaration to center block containers.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Expecting vertical `margin: auto` to center elements without using Flexbox or Grid.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. Padding -->
+        <article class="topic-card glow-card" id="css-padding">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 11</span>
+              <h2 class="topic-title">CSS Padding</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-padding" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              Padding creates internal breathing space inside an element's border line around its core content.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Shorthand Property Syntax</div>
+            <p class="explanation-text">
+              • <code>padding: 20px;</code> (All 4 sides)<br>
+              • <code>padding: 10px 20px;</code> (Top/Bottom Left/Right)<br>
+              • <code>padding: 10px 15px 20px 25px;</code> (Top Right Bottom Left - Clockwise order)
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Padding Sandbox</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div style="background:#1e293b; color:#f8fafc; padding:2rem; border-radius:8px; border:2px solid #3b82f6;"&gt;
+  Container with 2rem internal padding!
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Padding inherits background color/image styles of the parent element.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Using negative padding values (padding does NOT accept negative numbers).</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12. Border -->
+        <article class="topic-card glow-card" id="css-border">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 12</span>
+              <h2 class="topic-title">Borders & Border Radius</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-border" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              The <code>border</code> property draws outer stroke lines around elements, while <code>border-radius</code> rounds corner edges.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Border Styles & Radius Breakdown</div>
+            <p class="explanation-text">
+              • <code>border: 2px solid #3b82f6</code>: Width, style (solid, dashed, dotted), and stroke color.<br>
+              • <code>border-radius: 8px / 50% / 9999px</code>: Softens sharp corners (use 50% for circles; 9999px for pill buttons).
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Border Sandbox</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div style="border:3px dashed #f97316; border-radius:9999px; padding:10px 20px; text-align:center; color:white; background:#0f172a;"&gt;
+  Pill Button with Dashed Border
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Use <code>outline</code> instead of <code>border</code> when adding focus rings without altering layout dimensions.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Forgetting the border style keyword (e.g. writing `border: 2px #3b82f6` without `solid`), causing borders to fail rendering.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 13. Display Property -->
+        <article class="topic-card glow-card" id="css-display">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 13</span>
+              <h2 class="topic-title">CSS Display Property</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-display" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              The <code>display</code> property determines the layout rendering behavior of an element and its child nodes in the DOM tree.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Core Display Values Overview</div>
+            <p class="explanation-text">
+              • <code>display: block</code>: Takes full container width, starts on a new line.<br>
+              • <code>display: inline</code>: Respects content width only; ignores width/height declarations.<br>
+              • <code>display: inline-block</code>: Flows inline with text while respecting width and height bounds.<br>
+              • <code>display: flex</code>: Enables 1D flexbox container layout.<br>
+              • <code>display: grid</code>: Enables 2D grid container layout.<br>
+              • <code>display: none</code>: Completely removes element from DOM rendering tree.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Display Sandbox</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div style="display:inline-block; width:120px; height:60px; background:#3b82f6; color:white; text-align:center; line-height:60px; border-radius:6px; margin-right:10px;"&gt;Box 1&lt;/div&gt;
+&lt;div style="display:inline-block; width:120px; height:60px; background:#10b981; color:white; text-align:center; line-height:60px; border-radius:6px;"&gt;Box 2&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li><code>display: none</code> removes elements from visual layout AND screen reader accessibility trees.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Confusing `display: none` with `visibility: hidden` (visibility reserves layout whitespace).</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 14. Position Property -->
+        <article class="topic-card glow-card" id="css-position">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 14</span>
+              <h2 class="topic-title">CSS Position Property</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-position" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              The <code>position</code> property manipulates element positioning coordinates (<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, <code>z-index</code>).
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Position Values Breakdown</div>
+            <p class="explanation-text">
+              • <code>static</code> (Default): Standard normal document flow.<br>
+              • <code>relative</code>: Positioned relative to its normal position without affecting sibling flow.<br>
+              • <code>absolute</code>: Positioned relative to its nearest non-static positioned ancestor parent.<br>
+              • <code>fixed</code>: Positioned relative to the browser viewport window; stays fixed on scroll.<br>
+              • <code>sticky</code>: Toggles between relative and fixed based on scroll position.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Positioning Sandbox</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div style="position:relative; width:100%; height:100px; background:#1e293b; border-radius:8px;"&gt;
+  &lt;div style="position:absolute; top:10px; right:10px; background:#f97316; color:white; padding:4px 10px; border-radius:4px; font-weight:bold; font-size:0.8rem;"&gt;
+    Absolute Badge (Top Right)
+  &lt;/div&gt;
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Pair <code>position: absolute</code> on children with <code>position: relative</code> on the parent wrapper container.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Using `position: absolute` without setting `position: relative` on the parent, causing elements to fly up to the body element.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 15. Flexbox -->
+        <article class="topic-card glow-card" id="css-flexbox">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 15</span>
+              <h2 class="topic-title">Flexbox Layout Engine</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-flexbox" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              Flexible Box Layout (Flexbox) provides a 1-dimensional arrangement model for distributing space and aligning items along a main axis or cross axis.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Essential Flexbox Properties</div>
+            <p class="explanation-text">
+              • <code>flex-direction: row / column</code>: Sets main axis direction.<br>
+              • <code>justify-content: flex-start / center / space-between / space-around</code>: Aligns items along main axis.<br>
+              • <code>align-items: stretch / center / flex-start / flex-end</code>: Aligns items along cross axis.<br>
+              • <code>gap: 16px</code>: Sets spacing gap between flex child items.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Flexbox Playground</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Interactive Flex Editor</span><span>Live Result</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div style="display:flex; justify-content:space-between; align-items:center; gap:12px; background:#0f172a; padding:1rem; border-radius:8px;"&gt;
+    &lt;div style="background:#3b82f6; color:white; padding:8px 16px; border-radius:4px; font-weight:bold;"&gt;Item 1&lt;/div&gt;
+    &lt;div style="background:#3b82f6; color:white; padding:8px 16px; border-radius:4px; font-weight:bold;"&gt;Item 2&lt;/div&gt;
+    &lt;div style="background:#3b82f6; color:white; padding:8px 16px; border-radius:4px; font-weight:bold;"&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Flexbox is ideal for 1D component layouts (navbars, button groups, vertical card stacks).</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Trying to build complex 2D full page grid layouts using nested flexboxes instead of CSS Grid.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 16. CSS Grid -->
+        <article class="topic-card glow-card" id="css-grid">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 16</span>
+              <h2 class="topic-title">CSS Grid Layout</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-grid" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              CSS Grid is a 2-dimensional layout model for handling complex page layouts with customizable rows and columns simultaneously.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Key Grid Properties</div>
+            <p class="explanation-text">
+              • <code>grid-template-columns: repeat(3, 1fr) / repeat(auto-fit, minmax(250px, 1fr))</code>: Defines responsive column structures.<br>
+              • <code>gap: 20px</code>: Specifies row and column gap dimensions.<br>
+              • <code>grid-column: span 2</code>: Spans a child cell across 2 grid columns.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Grid Playground</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Interactive Grid Editor</span><span>Live Result</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; background:#0f172a; padding:1rem; border-radius:8px;"&gt;
+    &lt;div style="background:#8b5cf6; color:white; padding:12px; border-radius:4px; text-align:center; font-weight:bold;"&gt;Grid 1&lt;/div&gt;
+    &lt;div style="background:#8b5cf6; color:white; padding:12px; border-radius:4px; text-align:center; font-weight:bold;"&gt;Grid 2&lt;/div&gt;
+    &lt;div style="background:#8b5cf6; color:white; padding:12px; border-radius:4px; text-align:center; font-weight:bold;"&gt;Grid 3&lt;/div&gt;
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li><code>grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))</code> creates responsive layout grids without media queries.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Hardcoding pixel column widths on grids, causing horizontal scrolling overflow on small mobile screens.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 17. Pseudo Classes -->
+        <article class="topic-card glow-card" id="css-pseudo-classes">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 17</span>
+              <h2 class="topic-title">CSS Pseudo-Classes</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-pseudo-classes" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              Pseudo-classes (prefixed with a single colon <code>:</code>) target elements based on user interaction states or DOM structural positions.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Common Pseudo-Classes Overview</div>
+            <p class="explanation-text">
+              • <code>:hover</code>: Styles element when user hovers pointer over it.<br>
+              • <code>:focus</code>: Styles input element when focused via keyboard or click.<br>
+              • <code>:nth-child(even / 2n)</code>: Selects elements based on their numerical index position in parent container.<br>
+              • <code>:not(.disabled)</code>: Negation pseudo-class selector.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Pseudo-Classes Sandbox</span><span>Live Render</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;style&gt;
+  .hover-btn { background: #3b82f6; color: white; padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: all 0.2s; }
+  .hover-btn:hover { background: #f97316; transform: translateY(-2px); }
+&lt;/style&gt;
+&lt;button class="hover-btn"&gt;Hover Me to See State Change!&lt;/button&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Always provide clear visible <code>:focus-visible</code> styles for keyboard accessibility users.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Removing outline focus indicators (`outline: none`) without supplying an alternative `:focus` style.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 18. Pseudo Elements -->
+        <article class="topic-card glow-card" id="css-pseudo-elements">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 18</span>
+              <h2 class="topic-title">CSS Pseudo-Elements</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-pseudo-elements" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              Pseudo-elements (prefixed with a double colon <code>::</code>) style specific sub-parts of an element or inject virtual cosmetic markup.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Key Pseudo-Elements Breakdown</div>
+            <p class="explanation-text">
+              • <code>::before</code> & <code>::after</code>: Injects decorative content before or after element content (requires <code>content: ''</code>).<br>
+              • <code>::first-letter</code>: Styles the first letter of text blocks (drop caps).<br>
+              • <code>::placeholder</code>: Styles input placeholder text.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Pseudo-Elements Sandbox</span><span>Live Render</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;style&gt;
+  .badge::before { content: '🚀 '; }
+  .badge::after { content: ' ✓'; color: #10b981; }
+&lt;/style&gt;
+&lt;div class="badge" style="background:#1e293b; color:white; padding:10px; border-radius:6px; font-weight:bold;"&gt;
+  Injected Pseudo Content
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li><code>::before</code> and <code>::after</code> mandatory rule requires <code>content: ""</code> to render properly.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Forgetting `content: ''` on `::before` or `::after`, causing pseudo-elements to fail rendering.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 19. Media Queries -->
+        <article class="topic-card glow-card" id="css-media-queries">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 19</span>
+              <h2 class="topic-title">CSS Media Queries</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-media-queries" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              Media queries apply conditional CSS rule blocks based on target device screen width, orientation, resolution, or dark mode preferences.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Syntax & Mobile-First Breakpoints</div>
+            <p class="explanation-text">
+              • Mobile-First standard breakpoint rule:<br>
+              <code>@media (min-width: 768px) { ... }</code> (Triggers on screens 768px and wider).<br>
+              • Dark Mode Preference Rule:<br>
+              <code>@media (prefers-color-scheme: dark) { ... }</code>
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Media Queries Code</span><span>CSS Syntax</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;style&gt;
+  .responsive-box { background: #3b82f6; color: white; padding: 12px; border-radius: 6px; text-align: center; }
+  @media (max-width: 600px) {
+    .responsive-box { background: #f97316; }
+  }
+&lt;/style&gt;
+&lt;div class="responsive-box"&gt;Resize browser window to see background change!&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Adopt a mobile-first responsive strategy using <code>min-width</code> queries to build scalable layouts.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Mixing desktop-first `max-width` and mobile-first `min-width` media queries erratically.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 20. Responsive Design -->
+        <article class="topic-card glow-card" id="css-responsive">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 20</span>
+              <h2 class="topic-title">Fluid Responsive Web Design</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="css-responsive" data-category="css">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--css-color);">
+              Responsive Web Design (RWD) ensures webpages dynamically adapt visual layouts, text scaling, and media fluidly across smartphones, tablets, laptops, and 4K displays.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Pillars of Responsive Design</div>
+            <p class="explanation-text">
+              1. <strong>Fluid Grids</strong>: Use relative percentage units (<code>%</code>, <code>vw</code>, <code>fr</code>) instead of fixed pixels.<br>
+              2. <strong>Flexible Media</strong>: Ensure images scale using <code>max-width: 100%; height: auto;</code>.<br>
+              3. <strong>Media Queries</strong>: Reorganize multi-column layouts into single-column vertical stacks on small viewports.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Responsive Image Sandbox</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div style="max-width:100%; overflow:hidden; border-radius:8px;"&gt;
+  &lt;img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&q=80" alt="Responsive Web Design" style="max-width:100%; height:auto; display:block; border-radius:8px;"&gt;
+  &lt;p style="color:#10b981; font-weight:bold; margin-top:0.5rem;"&gt;✓ Image scales fluidly inside parent container width!&lt;/p&gt;
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Test layouts across real mobile screen dimensions and orientation rotations.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Hardcoding fixed width values like `width: 1200px` without supplying responsive `max-width: 100%`.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- CSS Interview Questions -->
+        <section class="interview-section" id="css-interview">
+          <div class="interview-header">
+            <h2 class="interview-title">💡 12 Essential CSS Interview Questions</h2>
+            <p style="color:var(--text-secondary); margin-top:0.25rem;">Key layout and specificity questions asked in frontend interviews.</p>
+          </div>
+
+          <div class="accordion-list">
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>1. What is the difference between box-sizing: content-box and border-box?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                In <code>border-box</code>, padding and border are included inside the specified width. In <code>content-box</code>, padding and border add to the specified width.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>2. Explain Flexbox vs CSS Grid.</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                Flexbox is 1-dimensional (rows or columns). Grid is 2-dimensional (rows and columns simultaneously).
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>3. How does CSS Specificity work?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                Inline (1000) &gt; ID (100) &gt; Class/Pseudo-class (10) &gt; Element tag (1).
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-brand-title">Frontend Study Hub</div>
+        <div class="footer-brand-desc">Master CSS layout systems, responsive grid architecture, and interactive color palettes.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home Dashboard</a></li>
+          <li><a href="html.html">HTML Guide</a></li>
+          <li><a href="javascript.html">JavaScript Guide</a></li>
+          <li><a href="tailwind.html">Tailwind CSS Guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="source.html">Source Code Viewer</a></li>
+          <li><a href="#css-interview">CSS Interview Q&A</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Frontend Development Learning Hub.</div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML – Complete Study Guide | Frontend Learning Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/html.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-badge">HUB</span>
+        <span>Frontend Study</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="html.html" class="nav-link active">HTML</a></li>
+        <li><a href="css.html" class="nav-link">CSS</a></li>
+        <li><a href="javascript.html" class="nav-link">JavaScript</a></li>
+        <li><a href="tailwind.html" class="nav-link">Tailwind CSS</a></li>
+        <li><a href="source.html" class="nav-link">Source Code</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-icon open-search-trigger" title="Search topics (Ctrl+K)">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </button>
+        <button class="btn-icon" id="themeToggleBtn" title="Toggle Light/Dark Theme"></button>
+        <button class="btn-icon hamburger-btn" id="hamburgerBtn" title="Toggle Navigation Menu">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-bar">
+    <div class="breadcrumb-container">
+      <div class="breadcrumb-item"><a href="index.html">Home</a></div>
+      <span class="breadcrumb-separator">/</span>
+      <div class="breadcrumb-item">HTML Complete Study Guide</div>
+    </div>
+  </nav>
+
+  <main class="main-wrapper">
+    <section class="page-header">
+      <div class="page-title-badge html-badge" style="background:var(--html-gradient); color:white;">
+        &lt;/&gt; HTML5 Core & Semantic Architecture
+      </div>
+      <h1 class="page-title">HTML – Complete Study Guide</h1>
+      <p class="page-subtitle">Master the structural foundation of the Web. Learn DOM parsing mechanics, semantic markup, web accessibility (a11y), form submission APIs, and document tree architecture.</p>
+    </section>
+
+    <!-- Visual Architecture Diagram -->
+    <div class="browser-diagram-container glow-card">
+      <div class="diagram-title">🌐 How Browsers Engine Processes HTML to DOM</div>
+      <div class="flow-steps">
+        <div class="flow-step-box" style="border-color:var(--html-color);">1. HTML Bytes</div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step-box" style="border-color:var(--html-color);">2. Tokens / Nodes</div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step-box" style="border-color:var(--html-color);">3. DOM Tree</div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step-box" style="border-color:var(--html-color);">4. Rendered Webpage</div>
+      </div>
+    </div>
+
+    <div class="study-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar-sticky">
+        <div class="sidebar-title">HTML Topics (16)</div>
+        <ul class="sidebar-nav">
+          <li><a href="#html-intro" class="sidebar-link"><span>1. HTML Introduction</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-doc-structure" class="sidebar-link"><span>2. Document Structure</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-headings" class="sidebar-link"><span>3. HTML Headings</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-paragraphs" class="sidebar-link"><span>4. Paragraphs</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-links" class="sidebar-link"><span>5. Links (Anchors)</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-images" class="sidebar-link"><span>6. Images</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-lists" class="sidebar-link"><span>7. Lists</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-tables" class="sidebar-link"><span>8. Tables</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-forms" class="sidebar-link"><span>9. Forms</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-input-types" class="sidebar-link"><span>10. Input Types</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-buttons" class="sidebar-link"><span>11. Buttons</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-semantic" class="sidebar-link"><span>12. Semantic HTML</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-div-span" class="sidebar-link"><span>13. Div & Span</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-audio-video" class="sidebar-link"><span>14. Audio & Video</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-attributes" class="sidebar-link"><span>15. Attributes</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-meta" class="sidebar-link"><span>16. Meta Tags</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#html-interview" class="sidebar-link" style="color: var(--brand-primary); font-weight:700;"><span>💡 12 Interview Q&As</span></a></li>
+        </ul>
+      </aside>
+
+      <!-- Content Area -->
+      <div class="content-area">
+
+        <!-- 1. HTML Introduction -->
+        <article class="topic-card glow-card" id="html-intro">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 01</span>
+              <h2 class="topic-title">HTML Introduction</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-intro" data-category="html">Mark as Completed</button>
+          </div>
+
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              HTML (HyperText Markup Language) is the standard markup language used to create and structure pages on the World Wide Web.
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="section-title">Detailed Technical Explanation</div>
+            <p class="explanation-text">
+              HTML tells web browsers how to structure and format web pages. When a user requests a web page, the browser receives raw HTML text data over HTTP/HTTPS, tokenizes characters into HTML tags, builds the Document Object Model (DOM) tree in memory, and renders visual pixels on the device display.
+            </p>
+            <div class="deep-dive-box">
+              <div class="deep-dive-title">💡 Deep Dive: How the Browser Parser Works</div>
+              <p style="font-size:0.9rem; color:var(--text-secondary);">
+                Browsers parse HTML sequentially top-to-bottom. Script tags without <code>async</code> or <code>defer</code> block HTML parsing until execution completes.
+              </p>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="section-title">Real-World Production Use Case</div>
+            <p class="explanation-text">
+              Every web application—from Google Search to Amazon—uses HTML as the structural framework to render text, images, buttons, and user interaction components.
+            </p>
+          </div>
+
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox (Edit Code Below)</div>
+            <div class="try-it-container">
+              <div class="try-it-header">
+                <span>Interactive HTML Sandbox</span>
+                <span>Live Preview</span>
+              </div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;h2 style="color:#f97316;"&gt;Welcome Student!&lt;/h2&gt;
+&lt;p&gt;Edit this text to see live preview updates!&lt;/p&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>HTML is not a programming language; it is a declarative markup language.</li>
+                <li>Elements consist of opening tag, content, and closing tag: <code>&lt;tag&gt;content&lt;/tag&gt;</code>.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Forgetting closing tag slashes like writing <code>&lt;p&gt;text&lt;p&gt;</code>.</li>
+                <li>Misspelling element tag names like <code>&lt;headder&gt;</code> instead of <code>&lt;header&gt;</code>.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. HTML Document Structure -->
+        <article class="topic-card glow-card" id="html-doc-structure">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 02</span>
+              <h2 class="topic-title">HTML Document Structure</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-doc-structure" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              The standardized boilerplate architecture required for web browsers to render HTML5 documents correctly.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Detailed Explanation & Breakdown</div>
+            <p class="explanation-text">
+              • <code>&lt;!DOCTYPE html&gt;</code>: Triggers standard rendering mode in modern browsers preventing quirks mode.<br>
+              • <code>&lt;html lang="en"&gt;</code>: Root container element specifying content language for accessibility and SEO engines.<br>
+              • <code>&lt;head&gt;</code>: Document metadata hub storing title, character encoding (UTF-8), viewport scale, and linked stylesheets.<br>
+              • <code>&lt;body&gt;</code>: Main container storing all user-visible page layout elements and graphics.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>HTML Boilerplate Sandbox</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;h1 style="color:#3b82f6;"&gt;Frontend Study Hub&lt;/h1&gt;
+  &lt;p&gt;Document structure loaded successfully!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Always place <code>&lt;!DOCTYPE html&gt;</code> on line 1 of your HTML documents.</li>
+                <li>Set <code>&lt;meta charset="UTF-8"&gt;</code> inside <code>&lt;head&gt;</code> to support special characters.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Placing visible body elements like <code>&lt;h1&gt;</code> inside the <code>&lt;head&gt;</code> tag.</li>
+                <li>Omission of viewport meta tag causing broken responsive scaling on mobile devices.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. HTML Headings -->
+        <article class="topic-card glow-card" id="html-headings">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 03</span>
+              <h2 class="topic-title">HTML Headings</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-headings" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              Heading tags from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> establish visual hierarchy and semantic outline for page content.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Detailed Explanation</div>
+            <p class="explanation-text">
+              Heading elements communicate document topic importance to search engine bots and screen readers. <code>&lt;h1&gt;</code> represents the single top-level page topic, while <code>&lt;h2&gt;</code> through <code>&lt;h6&gt;</code> represent nested sub-sections.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Headings Playground</span><span>Live Preview</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;h1 style="color:#f97316;"&gt;Heading 1 - Page Title&lt;/h1&gt;
+&lt;h2 style="color:#3b82f6;"&gt;Heading 2 - Major Section&lt;/h2&gt;
+&lt;h3 style="color:#10b981;"&gt;Heading 3 - Subsection&lt;/h3&gt;
+&lt;h4&gt;Heading 4 - Minor Topic&lt;/h4&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Use exactly one <code>&lt;h1&gt;</code> per web page for optimal SEO ranking.</li>
+                <li>Maintain sequential heading nesting (don't jump from <code>&lt;h1&gt;</code> directly to <code>&lt;h4&gt;</code>).</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Using heading tags just to make regular paragraph text big or bold (use CSS font size instead).</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Paragraphs -->
+        <article class="topic-card glow-card" id="html-paragraphs">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 04</span>
+              <h2 class="topic-title">Paragraphs & Line Breaks</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-paragraphs" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              The <code>&lt;p&gt;</code> tag defines blocks of narrative text content, automatically adding top and bottom margin spacing.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Detailed Explanation</div>
+            <p class="explanation-text">
+              Browsers collapse multiple consecutive whitespace spaces and line breaks inside HTML source text into a single space. To insert a hard line break without starting a new paragraph block, use the void line break tag <code>&lt;br&gt;</code>. To insert a thematic horizontal rule divider, use <code>&lt;hr&gt;</code>.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Paragraph Sandbox</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;p style="line-height:1.6;"&gt;
+  HTML paragraphs group related sentences into distinct blocks of readable text.
+&lt;/p&gt;
+&lt;hr style="border-color:#334155;"&gt;
+&lt;p&gt;
+  Line break example:&lt;br&gt;
+  First Line of Text&lt;br&gt;
+  Second Line of Text
+&lt;/p&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Paragraph tags are block-level elements that automatically wrap text onto a new line.</li>
+                <li>Use <code>&lt;hr&gt;</code> for semantic content dividers between sections.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Using multiple consecutive <code>&lt;br&gt;</code> tags to simulate spacing instead of using CSS margins.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Links -->
+        <article class="topic-card glow-card" id="html-links">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 05</span>
+              <h2 class="topic-title">Links (Anchor Tags)</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-links" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              The <code>&lt;a&gt;</code> (anchor) tag creates hyperlinks connecting web pages, internal section targets, downloadable files, or external URLs via <code>href</code>.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Detailed Breakdown of Key Attributes</div>
+            <p class="explanation-text">
+              • <code>href="URL"</code>: Specifies destination address (absolute URL, relative path, or section anchor ID like <code>#section1</code>).<br>
+              • <code>target="_blank"</code>: Opens destination link in a new browser tab.<br>
+              • <code>rel="noopener noreferrer"</code>: Crucial security attributes when opening external links in a new tab.<br>
+              • <code>download</code>: Prompts browser to download target file instead of navigating.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Hyperlinks Playground</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;a href="https://developer.mozilla.org" target="_blank" rel="noopener" style="color:#3b82f6; font-weight:bold; font-size:1.1rem;"&gt;
+  Visit MDN Web Docs &rarr;
+&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;a href="mailto:student@example.com" style="color:#10b981;"&gt;
+  📧 Email Support Team
+&lt;/a&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Always pair <code>target="_blank"</code> with <code>rel="noopener"</code> to prevent security exploits.</li>
+                <li>Anchor links can jump directly to element IDs on the same page (`#topic-id`).</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Writing vague link text like "Click Here" instead of descriptive text like "Download HTML Guide".</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Images -->
+        <article class="topic-card glow-card" id="html-images">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 06</span>
+              <h2 class="topic-title">HTML Images</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-images" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              The self-closing <code>&lt;img src="path" alt="text"&gt;</code> element embeds raster and vector visual graphics directly into document content.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Detailed Explanation & Performance Attributes</div>
+            <p class="explanation-text">
+              • <code>src</code>: Image URL source path (JPEG, PNG, WebP, SVG, GIF).<br>
+              • <code>alt</code>: Alternative textual description for accessibility screen readers and image load failures.<br>
+              • <code>width</code> / <code>height</code>: Prevents Layout Shift (CLS) during browser rendering.<br>
+              • <code>loading="lazy"</code>: Defers offscreen image loading until user scrolls near the element.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Images Sandbox</span><span>Live Render</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80" alt="Code Editor Screen" style="width:100%; max-width:320px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.3);" loading="lazy"&gt;
+&lt;p style="font-size:0.85rem; color:#94a3b8; margin-top:0.5rem;"&gt;HTML5 Image with alt tag and lazy loading&lt;/p&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li><code>alt</code> tags are mandatory for web accessibility standards (WCAG compliance).</li>
+                <li>Use WebP or SVG vector formats for light asset payload sizes.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Leaving `alt` attributes empty or using generic text like `alt="image"`.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Lists -->
+        <article class="topic-card glow-card" id="html-lists">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 07</span>
+              <h2 class="topic-title">HTML Lists</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-lists" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              HTML provides Unordered <code>&lt;ul&gt;</code>, Ordered <code>&lt;ol&gt;</code>, and Description <code>&lt;dl&gt;</code> list structures to group related data items.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Detailed List Types Breakdown</div>
+            <p class="explanation-text">
+              1. <strong>Unordered List (<code>&lt;ul&gt;</code>)</strong>: Displays bullet points. Used for navigation links and feature lists.<br>
+              2. <strong>Ordered List (<code>&lt;ol&gt;</code>)</strong>: Displays numbered sequences. Used for step-by-step tutorials and ranked items.<br>
+              3. <strong>Description List (<code>&lt;dl&gt;</code>)</strong>: Contains term names (<code>&lt;dt&gt;</code>) and term descriptions (<code>&lt;dd&gt;</code>). Used for glossaries.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Lists Playground</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;h4 style="color:#f97316;"&gt;Frontend Roadmap&lt;/h4&gt;
+&lt;ol style="padding-left:1.2rem; color:#cbd5e1;"&gt;
+  &lt;li&gt;Master HTML5 Structures&lt;/li&gt;
+  &lt;li&gt;Master CSS Layouts & Flexbox&lt;/li&gt;
+  &lt;li&gt;Master JavaScript DOM & Logic&lt;/li&gt;
+&lt;/ol&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Direct children of <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> must only be <code>&lt;li&gt;</code> tags.</li>
+                <li>Lists can be nested within <code>&lt;li&gt;</code> tags to build sub-menus.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Placing <code>&lt;div&gt;</code> or <code>&lt;p&gt;</code> tags directly inside a <code>&lt;ul&gt;</code> parent element.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Tables -->
+        <article class="topic-card glow-card" id="html-tables">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 08</span>
+              <h2 class="topic-title">HTML Tables</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-tables" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              The <code>&lt;table&gt;</code> element formats 2-dimensional structured tabular grid data with rows and columns.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Detailed Structure & Attributes</div>
+            <p class="explanation-text">
+              • <code>&lt;thead&gt;</code>: Header row block containing table heading cells (<code>&lt;th&gt;</code>).<br>
+              • <code>&lt;tbody&gt;</code>: Body block containing table data cells (<code>&lt;td&gt;</code>).<br>
+              • <code>&lt;tfoot&gt;</code>: Footer block containing summary totals.<br>
+              • <code>colspan="N"</code> & <code>rowspan="N"</code>: Merges multiple cells horizontally or vertically.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Table Sandbox</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;table style="width:100%; border-collapse:collapse; text-align:left;" border="1"&gt;
+  &lt;thead style="background:#1e293b; color:#f97316;"&gt;
+    &lt;tr&gt;&lt;th style="padding:8px;"&gt;Technology&lt;/th&gt;&lt;th style="padding:8px;"&gt;Topics&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody style="color:#cbd5e1;"&gt;
+    &lt;tr&gt;&lt;td style="padding:8px;"&gt;HTML5&lt;/td&gt;&lt;td style="padding:8px;"&gt;16 Topics&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td style="padding:8px;"&gt;CSS3&lt;/td&gt;&lt;td style="padding:8px;"&gt;20 Topics&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Use tables exclusively for tabular data (financial reports, schedules), never for page layouts.</li>
+                <li>Add <code>scope="col"</code> to <code>&lt;th&gt;</code> tags for screen readers.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Using tables for webpage layout design instead of CSS Flexbox or CSS Grid.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Forms -->
+        <article class="topic-card glow-card" id="html-forms">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 09</span>
+              <h2 class="topic-title">HTML Forms</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-forms" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              The <code>&lt;form&gt;</code> element collects user input data and submits payload requests to server endpoints or JavaScript handlers.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Form Attribute Breakdown</div>
+            <p class="explanation-text">
+              • <code>action="/api/login"</code>: Backend URL destination handling form submission.<br>
+              • <code>method="POST"</code>: HTTP method (<code>GET</code> appends inputs to query string; <code>POST</code> sends request body).<br>
+              • <code>&lt;label for="email"&gt;</code>: Accessible input label bound to field IDs.<br>
+              • <code>autocomplete="on"</code>: Enables browser auto-fill suggestions.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Form Sandbox</span><span>Live Render</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;form onsubmit="event.preventDefault(); alert('Form Submitted!');" style="display:flex; flex-direction:column; gap:10px;"&gt;
+  &lt;label style="font-weight:bold; color:#f8fafc;"&gt;Student Name:&lt;/label&gt;
+  &lt;input type="text" placeholder="Enter your name" required style="padding:8px; border-radius:4px; border:1px solid #334155;"&gt;
+  &lt;button type="submit" style="background:#3b82f6; color:white; padding:8px; border:none; border-radius:4px; font-weight:bold; cursor:pointer;"&gt;Submit Registration&lt;/button&gt;
+&lt;/form&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Every input field must have a matching <code>&lt;label&gt;</code> element for accessibility.</li>
+                <li>Set <code>name</code> attributes on inputs so data pairs are included in HTTP requests.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Forgetting the <code>name</code> attribute on input fields, causing inputs to be omitted on submit.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Input Types -->
+        <article class="topic-card glow-card" id="html-input-types">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 10</span>
+              <h2 class="topic-title">HTML Input Types</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-input-types" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              The <code>&lt;input type="..."&gt;</code> attribute specifies specialized interactive input controls for dates, colors, numbers, passwords, and files.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Comprehensive Input Types Overview</div>
+            <p class="explanation-text">
+              • <code>type="text"</code>: Standard single-line text input.<br>
+              • <code>type="password"</code>: Masks typed characters for security.<br>
+              • <code>type="email"</code>: Validates email address format and optimizes mobile keyboards.<br>
+              • <code>type="number"</code>: Accepts numeric values with min, max, and step validation.<br>
+              • <code>type="date"</code>: Displays native browser date picker UI.<br>
+              • <code>type="color"</code>: Displays native color swatch selection dialog.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Inputs Playground</span><span>Live Render</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div style="display:flex; flex-direction:column; gap:10px; color:#f8fafc;"&gt;
+  &lt;div&gt;&lt;label&gt;Date Picker:&lt;/label&gt; &lt;input type="date" style="padding:4px;"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;label&gt;Color Picker:&lt;/label&gt; &lt;input type="color" value="#3b82f6"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;label&gt;Range Slider:&lt;/label&gt; &lt;input type="range" min="0" max="100" value="75"&gt;&lt;/div&gt;
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Using proper input types triggers optimized virtual keyboards on smartphones (e.g. numeric keyboard for <code>type="tel"</code>).</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Using generic <code>type="text"</code> for email or phone fields instead of native semantic input types.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. Buttons -->
+        <article class="topic-card glow-card" id="html-buttons">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 11</span>
+              <h2 class="topic-title">HTML Buttons</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-buttons" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              The <code>&lt;button&gt;</code> element renders accessible interactive trigger buttons supporting text, icons, and nested markup.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Detailed Button Types & Attributes</div>
+            <p class="explanation-text">
+              • <code>type="button"</code>: General interactive button triggered via JS click handlers (prevents accidental form submission).<br>
+              • <code>type="submit"</code>: Triggers parent form submission.<br>
+              • <code>type="reset"</code>: Resets form inputs to default values.<br>
+              • <code>disabled</code>: Deactivates button focus and click events.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Button Sandbox</span><span>Live Render</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div style="display:flex; gap:10px;"&gt;
+  &lt;button onclick="alert('Primary Action!')" style="background:#f97316; color:white; padding:10px 20px; border:none; border-radius:6px; font-weight:bold; cursor:pointer;"&gt;Primary Button&lt;/button&gt;
+  &lt;button disabled style="background:#475569; color:#94a3b8; padding:10px 20px; border:none; border-radius:6px; font-weight:bold; cursor:not-allowed;"&gt;Disabled State&lt;/button&gt;
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Always explicitly specify <code>type="button"</code> on non-submitting form buttons to avoid default form submission behaviors.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Using <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code> elements with click handlers instead of semantic <code>&lt;button&gt;</code> tags.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12. Semantic HTML -->
+        <article class="topic-card glow-card" id="html-semantic">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 12</span>
+              <h2 class="topic-title">Semantic HTML5 Architecture</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-semantic" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              Semantic HTML uses meaningful tags (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>) to clearly convey page structure to browsers, search engines, and screen readers.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Semantic Elements Breakdown</div>
+            <p class="explanation-text">
+              • <code>&lt;header&gt;</code>: Contains site branding, hero banners, or navigation bars.<br>
+              • <code>&lt;nav&gt;</code>: Wraps primary site navigation link lists.<br>
+              • <code>&lt;main&gt;</code>: Encloses unique core document content (only one per page).<br>
+              • <code>&lt;article&gt;</code>: Self-contained composition (blog post, card, news item) reusable independently.<br>
+              • <code>&lt;section&gt;</code>: Thematic grouping of content, typically with a heading.<br>
+              • <code>&lt;aside&gt;</code>: Indirectly related sidebar content or callout boxes.<br>
+              • <code>&lt;footer&gt;</code>: Page or article footer containing copyright, metadata, and site links.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Semantic Layout Sandbox</span><span>Live Structure</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;header style="background:#1e293b; padding:10px; border-radius:6px; color:#f97316;"&gt;Header Title&lt;/header&gt;
+&lt;main style="padding:10px; background:#0f172a; margin:8px 0; border-radius:6px;"&gt;
+  &lt;article style="border:1px solid #334155; padding:10px; border-radius:4px;"&gt;
+    &lt;h3 style="color:#3b82f6;"&gt;Article Title&lt;/h3&gt;
+    &lt;p style="color:#cbd5e1;"&gt;Semantic content article block.&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/main&gt;
+&lt;footer style="background:#1e293b; padding:10px; border-radius:6px; color:#94a3b8; font-size:0.8rem;"&gt;Footer &copy; 2026&lt;/footer&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Semantic HTML significantly boosts Google SEO indexing and improves assistive screen reader navigation.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Creating "Div Soup" by nesting dozens of generic <code>&lt;div&gt;</code> containers instead of semantic landmark elements.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 13. Div and Span -->
+        <article class="topic-card glow-card" id="html-div-span">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 13</span>
+              <h2 class="topic-title">Div & Span Containers</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-div-span" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              <code>&lt;div&gt;</code> is a non-semantic block-level container; <code>&lt;span&gt;</code> is a non-semantic inline container used for targeted styling and scripting.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Comparison & Usage Guidelines</div>
+            <p class="explanation-text">
+              • <code>&lt;div&gt;</code> (Division): Starts on a new line, expands to fill full container width, and groups larger layout sections for CSS styling.<br>
+              • <code>&lt;span&gt;</code>: Remains inline without forcing a line break, taking up only the width of its enclosed text content (ideal for styling specific words).
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Div & Span Sandbox</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div style="background:#1e293b; padding:12px; border-radius:6px; color:#f8fafc;"&gt;
+  This is a block-level &lt;div&gt; container.
+  &lt;p&gt;This sentence contains a &lt;span style="color:#f97316; font-weight:bold;"&gt;highlighted span&lt;/span&gt; inside!&lt;/p&gt;
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Use <code>&lt;span&gt;</code> when modifying style properties of text snippets inside paragraphs.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Wrapping block-level elements like <code>&lt;div&gt;</code> inside inline <code>&lt;span&gt;</code> tags (invalid HTML syntax).</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 14. Audio & Video -->
+        <article class="topic-card glow-card" id="html-audio-video">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 14</span>
+              <h2 class="topic-title">HTML5 Audio & Video</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-audio-video" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              The <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> tags embed native multimedia playback directly into web pages without requiring external plugins.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Attributes & Format Support</div>
+            <p class="explanation-text">
+              • <code>controls</code>: Renders native play, pause, volume, and seeker UI controls.<br>
+              • <code>autoplay</code> & <code>muted</code>: Autoplays media (browsers enforce <code>muted</code> for autoplay permission).<br>
+              • <code>poster="image.jpg"</code>: Displays thumbnail placeholder image before video plays.<br>
+              • <code>&lt;source src="..." type="..."&gt;</code>: Provides fallback media format options (MP4, WebM, MP3, OGG).
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Multimedia Sandbox</span><span>Live Player</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;video controls width="100%" poster="https://via.placeholder.com/400x200/1e293b/f97316?text=Video+Thumbnail" style="border-radius:8px;"&gt;
+  &lt;source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"&gt;
+  Your browser does not support HTML5 video.
+&lt;/video&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Always include <code>muted</code> when using <code>autoplay</code> to satisfy modern browser media policies.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Omission of fallback text inside media tags for older unsupported browser clients.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 15. Attributes -->
+        <article class="topic-card glow-card" id="html-attributes">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 15</span>
+              <h2 class="topic-title">HTML Global Attributes</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-attributes" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              Global attributes are universal properties that can be applied to any HTML element to modify behavior, styling, identification, or data attachment.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Key Global Attributes Breakdown</div>
+            <p class="explanation-text">
+              • <code>id="unique-id"</code>: Unique element identifier for CSS anchors and JS selectors (must be unique per page).<br>
+              • <code>class="btn primary"</code>: Space-separated reusable CSS styling classes.<br>
+              • <code>style="..."</code>: Inline CSS declarations.<br>
+              • <code>title="..."</code>: Renders browser tooltip on hover.<br>
+              • <code>data-*="..."</code>: Stores custom private payload data accessible via JS <code>element.dataset</code>.<br>
+              • <code>tabindex="0"</code>: Controls keyboard focus order for accessibility navigation.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Attributes Sandbox</span><span>Live Output</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;div id="card-1" class="custom-card" title="Hover Tooltip Info" data-role="student-card" style="background:#1e293b; padding:12px; border-radius:6px; border-left:4px solid #f97316; color:#f8fafc;"&gt;
+  Element with ID, Class, Title, Data attribute & Inline Style!
+&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li><code>id</code> values must be strictly unique within an HTML document.</li>
+                <li>Use <code>data-*</code> attributes to pass server data cleanly to frontend JS handlers.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Reusing the exact same <code>id</code> on multiple elements, breaking JS document queries.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 16. Meta Tags -->
+        <article class="topic-card glow-card" id="html-meta">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 16</span>
+              <h2 class="topic-title">HTML Meta Tags & SEO</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="html-meta" data-category="html">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: var(--html-color);">
+              The <code>&lt;meta&gt;</code> tag located inside document <code>&lt;head&gt;</code> specifies character encoding, viewport mobile responsiveness, search engine SEO indexing, and social share previews.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Essential Meta Tags Breakdown</div>
+            <p class="explanation-text">
+              • <code>&lt;meta charset="UTF-8"&gt;</code>: Prevents text corruption by defining UTF-8 character set.<br>
+              • <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>: Ensures responsive scaling on mobile screens.<br>
+              • <code>&lt;meta name="description" content="..."&gt;</code>: Text snippet displayed in Google search results.<br>
+              • <code>&lt;meta property="og:title" content="..."&gt;</code>: Open Graph metadata controlling Twitter/LinkedIn link previews.
+            </p>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Try It Live Sandbox</div>
+            <div class="try-it-container">
+              <div class="try-it-header"><span>Meta Code Preview</span><span>HTML Code</span></div>
+              <div class="try-it-editor-grid">
+                <textarea class="try-it-textarea">&lt;!-- Viewport & SEO Metadata Example --&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content="Master Frontend Web Development"&gt;
+&lt;div style="color:#10b981; font-weight:bold;"&gt;✓ Metadata Code Validated&lt;/div&gt;</textarea>
+                <div class="try-it-preview-pane"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Meta descriptions directly impact click-through rates (CTR) on Google search result pages.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Omitting the viewport meta tag, resulting in mobile browsers rendering desktop pages zoomed far out.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Expanded HTML Interview Questions Section -->
+        <section class="interview-section" id="html-interview">
+          <div class="interview-header">
+            <h2 class="interview-title">💡 12 Essential HTML Interview Questions</h2>
+            <p style="color:var(--text-secondary); margin-top:0.25rem;">Comprehensive interview prep with code explanations.</p>
+          </div>
+
+          <div class="accordion-list">
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>1. What is the difference between HTML elements and tags?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                A <strong>tag</strong> is syntax enclosed in brackets (e.g. <code>&lt;p&gt;</code>). An <strong>element</strong> consists of the opening tag, inner content, and closing tag combined.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>2. Why is Semantic HTML important for SEO and Accessibility?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                Semantic tags inform screen readers about landmark page structures and allow search engine crawlers to accurately weight page context.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>3. What is the difference between block and inline elements?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                <strong>Block elements</strong> (like <code>div</code>, <code>p</code>, <code>h1</code>) take full container width and start on new lines. <strong>Inline elements</strong> (like <code>span</code>, <code>a</code>) take only needed content width.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>4. What is the purpose of the alt attribute on images?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                Provides descriptive text fallback for visually impaired screen readers and broken image links.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>5. What does &lt;!DOCTYPE html&gt; do?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                Instructs the browser to parse document content using modern HTML5 standard mode.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>6. What are HTML5 data-* attributes?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                Custom data attributes (e.g. <code>data-user-id="101"</code>) allowing developers to attach private data to DOM elements readable by JavaScript.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>7. What is the difference between &lt;script&gt;, &lt;script async&gt;, and &lt;script defer&gt;?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                Standard <code>&lt;script&gt;</code> blocks HTML parsing. <code>async</code> downloads script in parallel and executes immediately. <code>defer</code> downloads in parallel and executes after DOM parsing finishes.
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-brand-title">Frontend Study Hub</div>
+        <div class="footer-brand-desc">Master HTML5 semantic architecture and DOM tree construction.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home Dashboard</a></li>
+          <li><a href="css.html">CSS Guide</a></li>
+          <li><a href="javascript.html">JavaScript Guide</a></li>
+          <li><a href="tailwind.html">Tailwind Guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="source.html">Source Code Viewer</a></li>
+          <li><a href="#html-interview">HTML Interview Q&A</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Frontend Development Learning Hub.</div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

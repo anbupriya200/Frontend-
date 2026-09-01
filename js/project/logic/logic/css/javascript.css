@@ -1,0 +1,118 @@
+/* JavaScript Page Specific Styles */
+.js-badge {
+  background-color: var(--js-bg);
+  color: var(--js-text);
+  border: 1px solid rgba(247, 223, 30, 0.4);
+}
+
+/* Practice Program Cards */
+.practice-program-card {
+  background-color: var(--bg-card);
+  border: 2px solid var(--brand-primary);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.practice-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--brand-light);
+  color: var(--brand-primary);
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.program-question-box {
+  background-color: var(--bg-tertiary);
+  border-left: 4px solid #8b5cf6;
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.logic-steps-list {
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.logic-steps-list ol {
+  padding-left: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.logic-steps-list li strong {
+  color: var(--text-primary);
+}
+
+.code-tabs-header {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.code-tab-btn {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.code-tab-btn.active {
+  background-color: var(--bg-code);
+  color: #ffffff;
+  border-color: var(--bg-code);
+}
+
+.run-program-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  margin-top: 1rem;
+}
+
+.run-program-btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.live-console-output {
+  margin-top: 1rem;
+  background-color: #090d16;
+  border: 1px solid #1e293b;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  font-family: var(--font-mono);
+  color: #38bdf8;
+  font-size: 0.9rem;
+  min-height: 80px;
+  max-height: 250px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}

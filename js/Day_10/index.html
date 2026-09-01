@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mastery Hub | Pure Dark Theme Dashboard</title>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              400: '#818cf8',
+              accent: '#06b6d4',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-slate-100 font-sans antialiased selection:bg-indigo-600 selection:text-white min-h-screen flex flex-col relative overflow-x-hidden">
+
+  <!-- Background Animated Dark Glow Orbs -->
+  <div class="fixed top-0 left-1/4 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+  <div class="fixed top-1/3 right-10 w-[500px] h-[500px] bg-cyan-600/15 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+  <div class="fixed bottom-10 left-10 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+
+  <!-- STICKY PURE DARK NAVBAR -->
+  <header class="sticky top-0 z-50 backdrop-blur-2xl bg-black/90 border-b border-slate-800 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-cyan-500 to-indigo-400 p-[1px] shadow-lg shadow-indigo-600/40 group-hover:scale-105 transition-transform">
+            <div class="w-full h-full bg-black rounded-[11px] flex items-center justify-center font-mono font-bold text-indigo-400 text-sm">
+              &lt;/&gt;
+            </div>
+          </div>
+          <div>
+            <span class="text-lg font-bold bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent group-hover:to-indigo-300 transition-colors">Frontend Mastery</span>
+            <span class="text-xs font-semibold px-2 py-0.5 ml-1.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Hub</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-sm font-medium">
+          <a href="#home" class="nav-link px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-900 transition-colors active" data-section="home">Home</a>
+          <a href="#html-section" class="nav-link px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-900 transition-colors" data-section="html-section">HTML</a>
+          <a href="#css-section" class="nav-link px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-900 transition-colors" data-section="css-section">CSS</a>
+          <a href="#js-section" class="nav-link px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-900 transition-colors" data-section="js-section">JavaScript</a>
+          <a href="#tailwind-section" class="nav-link px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-900 transition-colors" data-section="tailwind-section">Tailwind CSS</a>
+          <a href="#source-section" class="nav-link px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-900 transition-colors" data-section="source-section">Source Code</a>
+        </nav>
+
+        <!-- Right Side Utility: Theme Switcher & Progress Counter -->
+        <div class="hidden sm:flex items-center gap-3">
+          
+          <!-- Theme Switcher Toggle Button -->
+          <button id="theme-toggle-btn" class="p-2 rounded-xl bg-[#080810] hover:bg-slate-800 text-yellow-400 border border-slate-800 transition-all flex items-center gap-1.5 text-xs font-semibold" title="Toggle Theme">
+            <svg id="theme-icon-moon" class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+            <span id="theme-toggle-text" class="text-slate-300">Dark Mode</span>
+          </button>
+
+          <!-- Overall Progress Pill -->
+          <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#080810] border border-slate-800 text-xs font-medium text-slate-300 shadow-inner" title="Overall Completed Topics">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Progress:</span>
+            <span id="nav-progress-text" class="text-indigo-400 font-bold font-mono">0 / 40</span>
+          </div>
+
+          <!-- Quick Jump to Search -->
+          <a href="#search-container" class="p-2 rounded-xl bg-[#080810] hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition-colors" title="Search Topics">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="hamburger-icon" class="block" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-black/95 backdrop-blur-xl transition-all duration-300">
+      <div class="px-4 pt-2 pb-4 space-y-1">
+        <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 font-medium">Home</a>
+        <a href="#html-section" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 font-medium">HTML</a>
+        <a href="#css-section" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 font-medium">CSS</a>
+        <a href="#js-section" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 font-medium">JavaScript</a>
+        <a href="#tailwind-section" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 font-medium">Tailwind CSS</a>
+        <a href="#source-section" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 font-medium">Source Code</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-grow">
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-black">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Hero Text Column -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wide uppercase shadow-inner">
+              <span class="w-2 h-2 rounded-full bg-indigo-400 animate-ping"></span>
+              Interactive Learning Platform
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+              Master <span class="bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">Frontend</span> Development
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+              Learn HTML, CSS, JavaScript and Tailwind CSS through concepts, examples and practical coding.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+              <a href="#overview-section" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white font-semibold text-sm shadow-xl shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:-translate-y-0.5 transition-all text-center flex items-center justify-center gap-2">
+                <span>Start Learning</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+              <a href="#source-section" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#080810] hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-800 font-semibold text-sm hover:-translate-y-0.5 transition-all text-center flex items-center justify-center gap-2 shadow-lg">
+                <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                <span>Explore Source Code</span>
+              </a>
+            </div>
+
+            <!-- Quick Metrics Grid -->
+            <div class="pt-6 grid grid-cols-4 gap-3 sm:gap-6 border-t border-slate-800/80 max-w-lg mx-auto lg:mx-0">
+              <div>
+                <div class="text-xl sm:text-2xl font-bold text-white">10</div>
+                <div class="text-xs text-slate-400">HTML Topics</div>
+              </div>
+              <div>
+                <div class="text-xl sm:text-2xl font-bold text-white">10</div>
+                <div class="text-xs text-slate-400">CSS Demos</div>
+              </div>
+              <div>
+                <div class="text-xl sm:text-2xl font-bold text-white">10</div>
+                <div class="text-xs text-slate-400">JS Programs</div>
+              </div>
+              <div>
+                <div class="text-xl sm:text-2xl font-bold text-white">10</div>
+                <div class="text-xs text-slate-400">Tailwind Tips</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hero Visual Column: Interactive Mock Code Editor -->
+          <div class="lg:col-span-5 relative">
+            
+            <!-- Pitch Black Code Editor Frame -->
+            <div class="relative rounded-2xl bg-black border border-slate-800 shadow-2xl shadow-black backdrop-blur-xl overflow-hidden animate-float">
+              
+              <!-- Window Top Bar -->
+              <div class="flex items-center justify-between px-4 py-3 bg-[#080810] border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                </div>
+                <div class="text-xs font-mono text-slate-400 flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7l9 6 9-6"/></svg>
+                  <span>frontend_mastery.js</span>
+                </div>
+                <div class="text-xs text-slate-500 font-mono">UTF-8</div>
+              </div>
+
+              <!-- Tech Pills Floating Bar -->
+              <div class="flex items-center gap-2 px-4 py-2 bg-[#040408] border-b border-slate-800/80 overflow-x-auto text-xs font-mono scrollbar-none">
+                <span class="px-2.5 py-1 rounded bg-orange-500/10 text-orange-400 border border-orange-500/20 font-bold">&lt;/&gt; HTML</span>
+                <span class="px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-bold">CSS</span>
+                <span class="px-2.5 py-1 rounded bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 font-bold">{ JS }</span>
+                <span class="px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-bold">TW</span>
+              </div>
+
+              <!-- Editor Content Lines -->
+              <div class="p-4 font-mono text-xs sm:text-sm leading-relaxed space-y-1 text-slate-300 bg-black">
+                <div class="flex"><span class="w-8 text-slate-600 select-none">1</span><span class="text-indigo-400 font-bold">const</span> &nbsp;<span class="text-amber-300">student</span> = <span class="text-cyan-300">new</span> <span class="text-emerald-400 font-bold">FrontendDeveloper</span>();</div>
+                <div class="flex"><span class="w-8 text-slate-600 select-none">2</span></div>
+                <div class="flex"><span class="w-8 text-slate-600 select-none">3</span><span class="text-indigo-400">student</span>.<span class="text-yellow-300">learnSkills</span>([</div>
+                <div class="flex"><span class="w-8 text-slate-600 select-none">4</span>&nbsp;&nbsp;<span class="text-emerald-300">"HTML5 Semantic Structure"</span>,</div>
+                <div class="flex"><span class="w-8 text-slate-600 select-none">5</span>&nbsp;&nbsp;<span class="text-emerald-300">"CSS Grid & Flexbox Magic"</span>,</div>
+                <div class="flex"><span class="w-8 text-slate-600 select-none">6</span>&nbsp;&nbsp;<span class="text-emerald-300">"JS Algorithms & DOM Logic"</span>,</div>
+                <div class="flex"><span class="w-8 text-slate-600 select-none">7</span>&nbsp;&nbsp;<span class="text-emerald-300">"Tailwind CSS Utility Styling"</span></div>
+                <div class="flex"><span class="w-8 text-slate-600 select-none">8</span>]);</div>
+                <div class="flex"><span class="w-8 text-slate-600 select-none">9</span></div>
+                <div class="flex"><span class="w-8 text-slate-600 select-none">10</span><span class="text-indigo-400">console</span>.<span class="text-yellow-300">log</span>(<span class="text-cyan-300">student</span>.<span class="text-yellow-300">getOutput</span>());</div>
+                <div class="flex"><span class="w-8 text-slate-600 select-none">11</span><span class="text-slate-500">// &gt;&gt; Ready to build modern web applications! 🚀</span></div>
+              </div>
+
+              <!-- Animated Editor Footer Console -->
+              <div class="px-4 py-2.5 bg-[#080810] border-t border-slate-800 flex items-center justify-between text-xs font-mono">
+                <div class="flex items-center gap-2 text-emerald-400">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  <span>Console: Output ready</span>
+                </div>
+                <div class="text-slate-400">index.js</div>
+              </div>
+
+            </div>
+
+            <!-- Floating Gradient Backdrop Decorator -->
+            <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-to-br from-indigo-600/20 to-cyan-600/20 rounded-2xl blur-2xl pointer-events-none -z-10"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LEARNING OVERVIEW SECTION -->
+    <section id="overview-section" class="py-16 bg-black border-y border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Learning Overview</h2>
+          <p class="mt-3 text-slate-400 text-base">Select any module below to jump directly into concepts, interactive code snippets, and live demonstrations.</p>
+        </div>
+
+        <!-- 4 Technology Large Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- HTML Card -->
+          <div class="glass-card topic-card group relative p-6 rounded-2xl border border-slate-800 hover:border-orange-500/40 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 group-hover:scale-110 transition-transform">
+                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M1.5 0h21l-1.91 21.563L11.97 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>
+              </div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">HTML</h3>
+                <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20">10 Topics</span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Master web structure, semantic elements, tables, forms, attributes, and accessible multimedia markup.
+              </p>
+            </div>
+            <div class="pt-6">
+              <a href="#html-section" class="w-full py-2.5 rounded-lg bg-black hover:bg-orange-500 text-slate-200 hover:text-white text-xs font-semibold transition-all border border-slate-800 flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-orange-500/20">
+                <span>Explore Topics</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- CSS Card -->
+          <div class="glass-card topic-card group relative p-6 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M1.5 0h21l-1.91 21.563L11.97 24l-8.564-2.438L1.5 0zm14.28 14.398l.386-4.046H7.135l-.234-2.585 9.176-.002.23-2.617H4.194l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H5.031l.33 4.171L11.97 19.351l5.379-1.443.431-4.51z"/></svg>
+              </div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">CSS</h3>
+                <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">10 Topics</span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Understand CSS selectors, box model, Flexbox, CSS Grid, positions, colors, and responsive visual layout design.
+              </p>
+            </div>
+            <div class="pt-6">
+              <a href="#css-section" class="w-full py-2.5 rounded-lg bg-black hover:bg-blue-500 text-slate-200 hover:text-white text-xs font-semibold transition-all border border-slate-800 flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-blue-500/20">
+                <span>Explore Topics</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- JavaScript Card -->
+          <div class="glass-card topic-card group relative p-6 rounded-2xl border border-slate-800 hover:border-yellow-500/40 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-400 group-hover:scale-110 transition-transform font-mono font-bold text-lg">
+                {JS}
+              </div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">JavaScript</h3>
+                <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">10 Programs</span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Practice 10 real JS algorithmic challenges directly from the uploaded <code class="text-yellow-300">index.js</code> source file.
+              </p>
+            </div>
+            <div class="pt-6">
+              <a href="#js-section" class="w-full py-2.5 rounded-lg bg-black hover:bg-yellow-500 hover:text-slate-950 text-slate-200 text-xs font-semibold transition-all border border-slate-800 flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-yellow-500/20">
+                <span>Explore Programs</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tailwind CSS Card -->
+          <div class="glass-card topic-card group relative p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"/></svg>
+              </div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Tailwind CSS</h3>
+                <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">10 Topics</span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Learn modern utility-first CSS styling, spacing, typography, grid/flex, borders, hover effects, and responsive breakpoints.
+              </p>
+            </div>
+            <div class="pt-6">
+              <a href="#tailwind-section" class="w-full py-2.5 rounded-lg bg-black hover:bg-cyan-500 hover:text-slate-950 text-slate-200 text-xs font-semibold transition-all border border-slate-800 flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-cyan-500/20">
+                <span>Explore Topics</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROGRESS DASHBOARD SECTION -->
+    <section class="py-12 bg-black border-b border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="p-6 md:p-8 rounded-2xl bg-gradient-to-r from-[#080810] via-[#0d0d1a] to-[#080810] border border-slate-800 shadow-2xl">
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-6">
+            <div>
+              <div class="flex items-center gap-3">
+                <h3 class="text-xl font-bold text-white">Learning Progress Tracker</h3>
+                <span class="px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold border border-indigo-500/30">40 Topics to Explore</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-1">Track your progress as you review topics and run practice programs.</p>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <button id="reset-progress-btn" class="px-3 py-1.5 rounded-lg bg-black hover:bg-rose-500/20 hover:text-rose-300 text-slate-400 border border-slate-800 text-xs font-medium transition-colors flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                Reset Progress
+              </button>
+            </div>
+          </div>
+
+          <!-- Main Progress Bar -->
+          <div class="space-y-2 mb-8">
+            <div class="flex justify-between text-xs font-semibold">
+              <span class="text-slate-300">Overall Course Progress</span>
+              <span id="overall-progress-percent" class="text-cyan-400 font-mono font-bold">0% Completed</span>
+            </div>
+            <div class="w-full h-3.5 rounded-full bg-black overflow-hidden p-0.5 border border-slate-800">
+              <div id="overall-progress-bar" class="h-full rounded-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-emerald-400 transition-all duration-500 w-0"></div>
+            </div>
+          </div>
+
+          <!-- Breakdown Metrics per Technology -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
+            
+            <div class="p-3.5 rounded-xl bg-black border border-slate-800">
+              <div class="flex items-center justify-between text-xs mb-1">
+                <span class="text-orange-400 font-semibold flex items-center gap-1">HTML</span>
+                <span id="progress-html-count" class="text-slate-400 font-mono">0 / 10</span>
+              </div>
+              <div class="w-full h-1.5 bg-[#080810] rounded-full overflow-hidden">
+                <div id="progress-html-bar" class="h-full bg-orange-500 transition-all duration-300 w-0"></div>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-black border border-slate-800">
+              <div class="flex items-center justify-between text-xs mb-1">
+                <span class="text-blue-400 font-semibold flex items-center gap-1">CSS</span>
+                <span id="progress-css-count" class="text-slate-400 font-mono">0 / 10</span>
+              </div>
+              <div class="w-full h-1.5 bg-[#080810] rounded-full overflow-hidden">
+                <div id="progress-css-bar" class="h-full bg-blue-500 transition-all duration-300 w-0"></div>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-black border border-slate-800">
+              <div class="flex items-center justify-between text-xs mb-1">
+                <span class="text-yellow-400 font-semibold flex items-center gap-1">JavaScript</span>
+                <span id="progress-js-count" class="text-slate-400 font-mono">0 / 10</span>
+              </div>
+              <div class="w-full h-1.5 bg-[#080810] rounded-full overflow-hidden">
+                <div id="progress-js-bar" class="h-full bg-yellow-500 transition-all duration-300 w-0"></div>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-black border border-slate-800">
+              <div class="flex items-center justify-between text-xs mb-1">
+                <span class="text-cyan-400 font-semibold flex items-center gap-1">Tailwind CSS</span>
+                <span id="progress-tailwind-count" class="text-slate-400 font-mono">0 / 10</span>
+              </div>
+              <div class="w-full h-1.5 bg-[#080810] rounded-full overflow-hidden">
+                <div id="progress-tailwind-bar" class="h-full bg-cyan-500 transition-all duration-300 w-0"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEARCH & FILTER TOOLBAR -->
+    <section id="search-container" class="py-8 bg-black sticky top-16 z-40 border-b border-slate-800/80 backdrop-blur-2xl bg-black/95">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+        
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          
+          <!-- Search Bar Input -->
+          <div class="relative w-full md:w-96">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+            <input type="text" id="global-search" placeholder="Search HTML, CSS, JavaScript or Tailwind topics..." 
+              class="w-full pl-10 pr-10 py-2.5 rounded-xl bg-[#080810] border border-slate-800 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all">
+            <button id="clear-search-btn" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-white">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-none text-xs font-medium">
+            <button class="filter-tab px-3.5 py-2 rounded-lg bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all active" data-category="all">All (40)</button>
+            <button class="filter-tab px-3.5 py-2 rounded-lg bg-[#080810] text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all" data-category="html">HTML (10)</button>
+            <button class="filter-tab px-3.5 py-2 rounded-lg bg-[#080810] text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all" data-category="css">CSS (10)</button>
+            <button class="filter-tab px-3.5 py-2 rounded-lg bg-[#080810] text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all" data-category="js">JavaScript (10)</button>
+            <button class="filter-tab px-3.5 py-2 rounded-lg bg-[#080810] text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all" data-category="tailwind">Tailwind (10)</button>
+          </div>
+
+        </div>
+
+        <!-- Filter Count Summary Status -->
+        <div id="search-status-bar" class="hidden flex items-center justify-between text-xs text-slate-400 pt-1">
+          <span>Showing <strong id="visible-topic-count" class="text-indigo-400">40</strong> of 40 topics</span>
+          <button id="reset-filter-btn" class="text-indigo-400 hover:underline">Reset filters</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 1: HTML SECTION -->
+    <section id="html-section" class="py-16 bg-black border-b border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="flex items-center gap-4 mb-10">
+          <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 font-bold">
+            &lt;/&gt;
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">10 Important HTML Topics</h2>
+            <p class="text-sm text-slate-400">Core structural tags, semantic markup, multimedia, tables, and form controls.</p>
+          </div>
+        </div>
+
+        <!-- 10 HTML Topics Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="html-cards-container">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: CSS SECTION -->
+    <section id="css-section" class="py-16 bg-[#040408] border-b border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="flex items-center gap-4 mb-10">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-sm">
+            CSS
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">10 Important CSS Topics</h2>
+            <p class="text-sm text-slate-400">Styling, Box Model, Flexbox, Grid, animations, and responsive visual layout design.</p>
+          </div>
+        </div>
+
+        <!-- 10 CSS Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="css-cards-container">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: JAVASCRIPT SECTION -->
+    <section id="js-section" class="py-16 bg-black border-b border-slate-800/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-400 font-mono font-bold text-base">
+              {JS}
+            </div>
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white">10 JavaScript Practice Programs</h2>
+              <p class="text-sm text-slate-400">Based directly on the uploaded <code class="text-yellow-300 font-mono">index.js</code> source file with live execution & interactive inputs.</p>
+            </div>
+          </div>
+
+          <a href="#source-section" class="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-lg bg-yellow-500/10 text-yellow-300 border border-yellow-500/20 hover:bg-yellow-500/20 transition-colors w-fit">
+            <span>View Source File (index.js)</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+
+        <!-- 10 JavaScript Program Cards Grid -->
+        <div class="space-y-8" id="js-cards-container">
+          <!-- Populated dynamically via JS from index.js source -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: ORIGINAL JAVASCRIPT SOURCE CODE SECTION -->
+    <section id="source-section" class="py-16 bg-[#040408] border-b border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="p-6 md:p-8 rounded-2xl bg-black border border-slate-800 shadow-2xl space-y-6">
+          
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-3">
+                <h2 class="text-2xl font-extrabold text-white">Original JavaScript Source</h2>
+                <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-300 border border-yellow-500/20 text-xs font-mono font-bold flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1px 1px 0 01.707.293l5.414 5.414a1px 1px 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  index.js
+                </span>
+              </div>
+              <p class="text-sm text-slate-400 mt-1">This source file contains JavaScript practice programs used in this learning dashboard.</p>
+            </div>
+
+            <!-- Source Actions -->
+            <div class="flex flex-wrap items-center gap-3">
+              <button id="view-source-modal-btn" class="px-4 py-2 rounded-xl bg-[#080810] hover:bg-slate-800 text-white text-xs font-semibold border border-slate-800 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                View Source
+              </button>
+              <button id="copy-full-source-btn" class="px-4 py-2 rounded-xl bg-[#080810] hover:bg-slate-800 text-white text-xs font-semibold border border-slate-800 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                Copy Source
+              </button>
+              <button id="download-source-btn" class="px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-semibold shadow-lg shadow-indigo-600/30 transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Download Source
+              </button>
+            </div>
+          </div>
+
+          <!-- Code Display Panel -->
+          <div class="relative rounded-xl bg-black border border-slate-800 overflow-hidden shadow-inner">
+            <div class="flex items-center justify-between px-4 py-2.5 bg-[#080810] border-b border-slate-800 text-xs font-mono text-slate-400">
+              <span>d:\Frontend\js\Day_10\index.js</span>
+              <span id="source-line-count">112 Lines • 2.1 KB</span>
+            </div>
+            <pre class="p-4 font-mono text-xs sm:text-sm text-slate-200 overflow-x-auto max-h-[500px] leading-relaxed scrollbar-thin scrollbar-thumb-slate-800" id="raw-index-source-display"><code>Loading index.js source...</code></pre>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: TAILWIND CSS SECTION -->
+    <section id="tailwind-section" class="py-16 bg-black border-b border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="flex items-center gap-4 mb-10">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-sm">
+            TW
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">10 Important Tailwind CSS Topics</h2>
+            <p class="text-sm text-slate-400">Utility-first framework concepts, flex/grid utilities, colors, spacing, and hover states.</p>
+          </div>
+        </div>
+
+        <!-- 10 Tailwind Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="tailwind-cards-container">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black border-t border-slate-800/80 text-slate-400 text-sm py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <!-- Footer Branding -->
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-400 p-[1px]">
+            <div class="w-full h-full bg-black rounded-[11px] flex items-center justify-center font-mono font-bold text-indigo-400 text-xs">
+              &lt;/&gt;
+            </div>
+          </div>
+          <div>
+            <span class="text-base font-bold text-white">Frontend Mastery Hub</span>
+            <p class="text-xs text-slate-500">"Learn. Practice. Build."</p>
+          </div>
+        </div>
+
+        <!-- Nav Links -->
+        <div class="flex flex-wrap items-center gap-4 text-xs font-medium">
+          <a href="#html-section" class="hover:text-white transition-colors">HTML</a>
+          <span>|</span>
+          <a href="#css-section" class="hover:text-white transition-colors">CSS</a>
+          <span>|</span>
+          <a href="#js-section" class="hover:text-white transition-colors">JavaScript</a>
+          <span>|</span>
+          <a href="#tailwind-section" class="hover:text-white transition-colors">Tailwind CSS</a>
+          <span>|</span>
+          <a href="#source-section" class="hover:text-white transition-colors">Source Code</a>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div>&copy; 2026 Frontend Mastery Hub. Built for practical student learning and portfolio demonstration.</div>
+        <div>Made with HTML5, CSS3, JS & Tailwind CSS.</div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button id="back-to-top-btn" class="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white shadow-xl shadow-indigo-600/40 transition-all duration-300 opacity-0 pointer-events-none translate-y-4 focus:outline-none" aria-label="Back to top">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+  </button>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="fixed bottom-6 left-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- SOURCE MODAL OVERLAY -->
+  <div id="source-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4 sm:p-6 transition-opacity duration-300">
+    <div class="bg-[#080810] border border-slate-800 rounded-2xl max-w-4xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-black">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+          <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+          <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+          <span class="font-mono text-sm text-slate-200 ml-2 font-bold">index.js — Full Source Viewer</span>
+        </div>
+        <button id="close-source-modal" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto font-mono text-xs sm:text-sm text-slate-300 bg-black">
+        <pre id="modal-source-code" class="leading-relaxed"><code>Loading source...</code></pre>
+      </div>
+      <div class="px-6 py-3 border-t border-slate-800 bg-black flex justify-end gap-3">
+        <button id="modal-copy-btn" class="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold">Copy Source</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>

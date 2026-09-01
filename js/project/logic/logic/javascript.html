@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript – Complete Study Guide | Frontend Learning Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/javascript.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-badge">HUB</span>
+        <span>Frontend Study</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="html.html" class="nav-link">HTML</a></li>
+        <li><a href="css.html" class="nav-link">CSS</a></li>
+        <li><a href="javascript.html" class="nav-link active">JavaScript</a></li>
+        <li><a href="tailwind.html" class="nav-link">Tailwind CSS</a></li>
+        <li><a href="source.html" class="nav-link">Source Code</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-icon open-search-trigger" title="Search topics (Ctrl+K)">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </button>
+        <button class="btn-icon" id="themeToggleBtn" title="Toggle Light/Dark Theme"></button>
+        <button class="btn-icon hamburger-btn" id="hamburgerBtn" title="Toggle Navigation Menu">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-bar">
+    <div class="breadcrumb-container">
+      <div class="breadcrumb-item"><a href="index.html">Home</a></div>
+      <span class="breadcrumb-separator">/</span>
+      <div class="breadcrumb-item">JavaScript Complete Study Guide</div>
+    </div>
+  </nav>
+
+  <main class="main-wrapper">
+    <section class="page-header">
+      <div class="page-title-badge js-badge" style="background:var(--js-gradient); color:#000;">
+        ⚡ JavaScript ES6+, Execution Context & Practice
+      </div>
+      <h1 class="page-title">JavaScript – Complete Study Guide</h1>
+      <p class="page-subtitle">Learn core programming concepts, control flow logic, functions, DOM manipulation, and practice real JavaScript code problems with interactive execution.</p>
+    </section>
+
+    <!-- Visual Execution Architecture Diagram -->
+    <div class="glow-card" style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-xl); padding:1.75rem; margin-bottom:2.5rem; text-align:center;">
+      <div style="font-weight:800; font-size:1.1rem; margin-bottom:1rem; color:var(--text-primary);">⚡ JavaScript Execution Pipeline & Event Loop</div>
+      <div style="display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap;">
+        <div style="background:var(--bg-tertiary); border:2px solid #eab308; padding:0.6rem 1.2rem; border-radius:8px; font-weight:700;">1. Code File</div>
+        <span style="color:#eab308; font-weight:bold;">&rarr;</span>
+        <div style="background:var(--bg-tertiary); border:2px solid #eab308; padding:0.6rem 1.2rem; border-radius:8px; font-weight:700;">2. Global Context</div>
+        <span style="color:#eab308; font-weight:bold;">&rarr;</span>
+        <div style="background:var(--bg-tertiary); border:2px solid #eab308; padding:0.6rem 1.2rem; border-radius:8px; font-weight:700;">3. Call Stack</div>
+        <span style="color:#eab308; font-weight:bold;">&rarr;</span>
+        <div style="background:var(--bg-tertiary); border:2px solid #eab308; padding:0.6rem 1.2rem; border-radius:8px; font-weight:700;">4. Console Output</div>
+      </div>
+    </div>
+
+    <div class="study-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar-sticky">
+        <div class="sidebar-title">JS Core Concepts (25)</div>
+        <ul class="sidebar-nav" style="max-height:350px; overflow-y:auto; margin-bottom:1.5rem;">
+          <li><a href="#js-intro" class="sidebar-link"><span>1. JS Introduction</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-variables" class="sidebar-link"><span>2. Variables</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-let" class="sidebar-link"><span>3. let Statement</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-const" class="sidebar-link"><span>4. const Statement</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-var" class="sidebar-link"><span>5. var Statement</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-data-types" class="sidebar-link"><span>6. Data Types</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-operators" class="sidebar-link"><span>7. Operators</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-arithmetic" class="sidebar-link"><span>8. Arithmetic Ops</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-comparison" class="sidebar-link"><span>9. Comparison Ops</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-logical" class="sidebar-link"><span>10. Logical Ops</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-if" class="sidebar-link"><span>11. if Statement</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-ifelse" class="sidebar-link"><span>12. if...else</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-elseif" class="sidebar-link"><span>13. else if</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-for-loop" class="sidebar-link"><span>14. for Loop</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-while-loop" class="sidebar-link"><span>15. while Loop</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-functions" class="sidebar-link"><span>16. Functions</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-arrays" class="sidebar-link"><span>17. Arrays</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-strings" class="sidebar-link"><span>18. Strings</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-objects" class="sidebar-link"><span>19. Objects</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-array-methods" class="sidebar-link"><span>20. Array Methods</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-string-methods" class="sidebar-link"><span>21. String Methods</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-dom-intro" class="sidebar-link"><span>22. DOM Intro</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-dom-selectors" class="sidebar-link"><span>23. DOM Selectors</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-events" class="sidebar-link"><span>24. Events</span> <span class="topic-status-icon">✓</span></a></li>
+          <li><a href="#js-form-validation" class="sidebar-link"><span>25. Form Validation</span> <span class="topic-status-icon">✓</span></a></li>
+        </ul>
+
+        <div class="sidebar-title">JS Practice Programs (9)</div>
+        <ul class="sidebar-nav">
+          <li><a href="#prog-1" class="sidebar-link"><span>1. Pos / Neg / Zero</span></a></li>
+          <li><a href="#prog-2" class="sidebar-link"><span>2. Largest of Three</span></a></li>
+          <li><a href="#prog-3" class="sidebar-link"><span>3. Count Even Numbers</span></a></li>
+          <li><a href="#prog-4" class="sidebar-link"><span>4. Sum of Digits</span></a></li>
+          <li><a href="#prog-5" class="sidebar-link"><span>5. Array Sum</span></a></li>
+          <li><a href="#prog-6" class="sidebar-link"><span>6. Prime Number</span></a></li>
+          <li><a href="#prog-7" class="sidebar-link"><span>7. Common Elements</span></a></li>
+          <li><a href="#prog-8" class="sidebar-link"><span>8. Occurrence Count</span></a></li>
+          <li><a href="#prog-9" class="sidebar-link"><span>9. Count Vowels</span></a></li>
+          <li><a href="#js-interview" class="sidebar-link" style="color: var(--brand-primary); font-weight:700;"><span>💡 15 Interview Q&As</span></a></li>
+        </ul>
+      </aside>
+
+      <!-- Content Area -->
+      <div class="content-area">
+
+        <!-- 1. JS Introduction -->
+        <article class="topic-card glow-card" id="js-intro">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 01</span>
+              <h2 class="topic-title">JavaScript Introduction</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-intro" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              JavaScript is a high-level, lightweight, just-in-time compiled, object-oriented programming language that powers dynamic interactivity on the Web.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Detailed Explanation & Engine Mechanics</div>
+            <p class="explanation-text">
+              JavaScript runs inside browser engines (e.g. V8 in Chrome, SpiderMonkey in Firefox). It is single-threaded and relies on an Event Loop architecture to handle asynchronous tasks like API fetches and timer callbacks without blocking UI rendering.
+            </p>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>JavaScript is dynamically typed (variables can change value data types at runtime).</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Confusing JavaScript with Java (they are completely different languages).</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Variables -->
+        <article class="topic-card glow-card" id="js-variables">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 02</span>
+              <h2 class="topic-title">JavaScript Variables</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-variables" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Variables are named containers in memory used to store references to data values (`let`, `const`, `var`).
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Declaration Keywords Comparison</div>
+            <p class="explanation-text">
+              • <code>let</code>: Block-scoped, re-assignable value.<br>
+              • <code>const</code>: Block-scoped, non-reassignable constant reference.<br>
+              • <code>var</code>: Function-scoped legacy variable subject to hoisting.
+            </p>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Default to using <code>const</code> unless you explicitly plan to reassign a variable value.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Using undeclared variables without `let` or `const` (creates accidental global variables).</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. let Statement -->
+        <article class="topic-card glow-card" id="js-let">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 03</span>
+              <h2 class="topic-title">let Statement</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-let" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              The <code>let</code> keyword declares a block-scoped local variable, optionally initializing it to a value.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Temporal Dead Zone (TDZ)</div>
+            <p class="explanation-text">
+              Variables declared with <code>let</code> are hoisted to the top of their block scope but cannot be accessed until initialization line executes (accessing prior triggers a `ReferenceError`).
+            </p>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li><code>let</code> variables cannot be redeclared within the exact same block scope.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Attempting to read a `let` variable before its declaration line in code.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. const Statement -->
+        <article class="topic-card glow-card" id="js-const">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 04</span>
+              <h2 class="topic-title">const Statement</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-const" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              The <code>const</code> keyword declares read-only block-scoped constants whose variable identifiers cannot be reassigned.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Mutation vs Reassignment</div>
+            <p class="explanation-text">
+              <code>const</code> prevents reassigning the variable identifier to a new value (e.g. <code>PI = 3.14</code> works; <code>PI = 4</code> errors). However, properties inside constant Objects or Arrays CAN still be mutated!
+            </p>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Must be initialized with a value at the exact line of declaration.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Attempting to reassign a `const` variable (causes `TypeError: Assignment to constant variable`).</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. var Statement -->
+        <article class="topic-card glow-card" id="js-var">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 05</span>
+              <h2 class="topic-title">var Statement</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-var" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              <code>var</code> is the legacy pre-ES6 function-scoped variable declaration subject to hoisting.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Why var is Avoided in Modern Code</div>
+            <p class="explanation-text">
+              <code>var</code> ignores block scope boundaries (if/for blocks), leaking variables into outer scopes. It is hoisted to top of function with `undefined` initial values.
+            </p>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Avoid using <code>var</code> in modern ES6+ codebases; use <code>const</code> and <code>let</code> instead.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Accidental variable leakage out of `for` loops due to `var` function scoping.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Data Types -->
+        <article class="topic-card glow-card" id="js-data-types">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 06</span>
+              <h2 class="topic-title">JavaScript Data Types</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-data-types" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              JavaScript data types are categorized into 7 Primitives (immutable) and 1 Reference Object type.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Primitives vs Reference Types</div>
+            <p class="explanation-text">
+              • <strong>Primitives</strong>: String, Number, Boolean, Undefined, Null, BigInt, Symbol (Stored by value).<br>
+              • <strong>Reference Types</strong>: Objects, Arrays, Functions (Stored by memory address reference).
+            </p>
+          </div>
+          <div class="grid-2col">
+            <div class="info-card remember-card">
+              <div class="info-card-title">Important Points</div>
+              <ul class="info-list">
+                <li>Use <code>typeof variable</code> to inspect primitive data types at runtime.</li>
+              </ul>
+            </div>
+            <div class="info-card mistake-card">
+              <div class="info-card-title">Common Mistakes</div>
+              <ul class="info-list">
+                <li>Assuming `typeof null` returns "null" (it legacy returns "object" in JS).</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7-10: Operators -->
+        <article class="topic-card glow-card" id="js-operators">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 07</span>
+              <h2 class="topic-title">JavaScript Operators</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-operators" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Operators perform mathematical, logical, and assignment operations on operands.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Operator Categories</div>
+            <p class="explanation-text">
+              Includes Arithmetic (<code>+</code>, <code>-</code>), Assignment (<code>=</code>, <code>+=</code>), Comparison (<code>===</code>), Logical (<code>&&</code>, <code>||</code>), and Ternary (<code>condition ? a : b</code>).
+            </p>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="js-arithmetic">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 08</span>
+              <h2 class="topic-title">Arithmetic Operators</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-arithmetic" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Arithmetic operators perform standard mathematical calculations on numeric operands.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Operators Breakdown</div>
+            <p class="explanation-text">
+              • Addition (<code>+</code>), Subtraction (<code>-</code>), Multiplication (<code>*</code>), Division (<code>/</code>)<br>
+              • Modulus (<code>%</code>): Returns remainder after division.<br>
+              • Exponentiation (<code>**</code>): Powers calculation (<code>2 ** 3 = 8</code>).
+            </p>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="js-comparison">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 09</span>
+              <h2 class="topic-title">Comparison Operators</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-comparison" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Comparison operators test equality and ordinal relationships between values, returning boolean true or false.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Strict Equality vs Loose Equality</div>
+            <p class="explanation-text">
+              • <code>===</code> (Strict Equal): Checks both Value AND Data Type without type coercion.<br>
+              • <code>==</code> (Loose Equal): Performs automatic type coercion before comparing (avoid!).
+            </p>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="js-logical">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 10</span>
+              <h2 class="topic-title">Logical Operators</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-logical" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Logical operators (<code>&&</code> AND, <code>||</code> OR, <code>!</code> NOT) combine multiple boolean conditions.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Short-Circuit Evaluation</div>
+            <p class="explanation-text">
+              • <code>&&</code>: Short-circuits and returns first falsy value.<br>
+              • <code>||</code>: Short-circuits and returns first truthy value.
+            </p>
+          </div>
+        </article>
+
+        <!-- 11-13: Control Flow -->
+        <article class="topic-card glow-card" id="js-if">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 11</span>
+              <h2 class="topic-title">if Statement</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-if" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              The <code>if</code> statement executes a code block only if its condition expression evaluates to truthy.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="js-ifelse">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 12</span>
+              <h2 class="topic-title">if...else Statement</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-ifelse" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Executes the primary block if condition is true, or alternative <code>else</code> block if false.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="js-elseif">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 13</span>
+              <h2 class="topic-title">else if Statement</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-elseif" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Chains multiple conditional evaluations sequentially until a truthy condition matches.
+            </div>
+          </div>
+        </article>
+
+        <!-- 14-15: Loops -->
+        <article class="topic-card glow-card" id="js-for-loop">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 14</span>
+              <h2 class="topic-title">for Loop</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-for-loop" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Repeats execution loop for a specified iteration count: <code>for (let i = 0; i &lt; N; i++)</code>.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="js-while-loop">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 15</span>
+              <h2 class="topic-title">while Loop</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-while-loop" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Executes a code loop repeatedly as long as condition remains truthy.
+            </div>
+          </div>
+        </article>
+
+        <!-- 16: Functions -->
+        <article class="topic-card glow-card" id="js-functions">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 16</span>
+              <h2 class="topic-title">Functions & Arrow Functions</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-functions" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Functions are reusable subroutines accepting parameter inputs and returning computational output values.
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Arrow Functions ES6 Syntax</div>
+            <p class="explanation-text">
+              <code>const add = (a, b) => a + b;</code> provides concise syntax and lexically binds the <code>this</code> keyword from outer scope.
+            </p>
+          </div>
+        </article>
+
+        <!-- 17-21: Arrays, Strings, Objects & Methods -->
+        <article class="topic-card glow-card" id="js-arrays">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 17</span>
+              <h2 class="topic-title">JavaScript Arrays</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-arrays" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Arrays are zero-indexed ordered list collections storing multiple data values inside single variable references.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="js-strings">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 18</span>
+              <h2 class="topic-title">Strings & Template Literals</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-strings" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Strings store text sequences. Template literals (<code>`Hello ${name}`</code>) support string interpolation and multi-line strings.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="js-objects">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 19</span>
+              <h2 class="topic-title">JavaScript Objects</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-objects" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Objects store keyed collections of properties and methods: <code>{ name: "John", age: 25 }</code>.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="js-array-methods">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 20</span>
+              <h2 class="topic-title">Array Higher-Order Methods</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-array-methods" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Methods like <code>.map()</code>, <code>.filter()</code>, <code>.reduce()</code>, <code>.forEach()</code> transform and iterate array data functionally.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="js-string-methods">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 21</span>
+              <h2 class="topic-title">String Utility Methods</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-string-methods" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Utility methods like <code>.includes()</code>, <code>.slice()</code>, <code>.split()</code>, <code>.toLowerCase()</code> manipulate string text.
+            </div>
+          </div>
+        </article>
+
+        <!-- 22-25: DOM & Events -->
+        <article class="topic-card glow-card" id="js-dom-intro">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 22</span>
+              <h2 class="topic-title">DOM Architecture Intro</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-dom-intro" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              The Document Object Model (DOM) is an object API tree interface allowing JavaScript to dynamically access, modify, and style HTML tags.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="js-dom-selectors">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 23</span>
+              <h2 class="topic-title">DOM Element Selectors</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-dom-selectors" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Methods like <code>document.getElementById()</code>, <code>document.querySelector()</code>, and <code>document.querySelectorAll()</code> locate DOM nodes.
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="js-events">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 24</span>
+              <h2 class="topic-title">DOM Event Handling</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-events" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              <code>element.addEventListener('click', handler)</code> listens for user interactions (clicks, keypresses, form submits).
+            </div>
+          </div>
+        </article>
+
+        <article class="topic-card glow-card" id="js-form-validation">
+          <div class="topic-header">
+            <div class="topic-badge-wrapper">
+              <span class="topic-number">Topic 25</span>
+              <h2 class="topic-title">JavaScript Form Validation</h2>
+            </div>
+            <button class="topic-completion-btn" data-topic-id="js-form-validation" data-category="javascript">Mark as Completed</button>
+          </div>
+          <div class="section-block">
+            <div class="section-title">Definition</div>
+            <div class="definition-box" style="border-left-color: #eab308;">
+              Validates input field length, regex formats, and password match criteria before permitting form submission.
+            </div>
+          </div>
+        </article>
+
+        <!-- ==========================================================================
+             PRACTICE PROGRAMS SECTION
+             ========================================================================== -->
+        <section id="js-practice" style="margin-top: 4rem;">
+          <div style="background:var(--js-gradient); color:#000; border-radius:var(--radius-xl); padding:2rem; margin-bottom:2.5rem; box-shadow:var(--shadow-md);">
+            <h2 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">💻 JavaScript Practice Programs</h2>
+            <p style="font-weight:600; opacity:0.9;">Algorithmic problem breakdown from your original source code. Click <strong>Run Program Live</strong> to execute each script in real-time!</p>
+          </div>
+
+          <!-- Program 1 -->
+          <article class="practice-program-card glow-card" id="prog-1">
+            <span class="practice-badge">Program 01</span>
+            <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:0.75rem; color:var(--text-primary);">1. Positive, Negative, or Zero</h3>
+            <div class="program-question-box"><strong>Question:</strong> Check whether a given number is positive or negative.</div>
+            <div class="code-block-container">
+              <div class="code-header"><span>Original Source Code</span><button class="copy-code-btn">Copy</button></div>
+              <pre><code>let number = 8;
+if (number < 0) {
+  console.log("Negative number ");
+} else {
+  console.log(" Positive number ");
+}</code></pre>
+            </div>
+            <button class="run-program-btn" data-prog-id="prog-1">▶ Run Program Live</button>
+            <div class="live-console-output" id="console-prog-1">Click Run Program Live to view execution logs...</div>
+          </article>
+
+          <!-- Program 2 -->
+          <article class="practice-program-card glow-card" id="prog-2">
+            <span class="practice-badge">Program 02</span>
+            <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:0.75rem; color:var(--text-primary);">2. Find the Largest of Three Numbers</h3>
+            <div class="program-question-box"><strong>Question:</strong> Compare three numeric variables and identify the largest value.</div>
+            <div class="code-block-container">
+              <div class="code-header"><span>Original Source Code</span><button class="copy-code-btn">Copy</button></div>
+              <pre><code>let a1 = 56;
+let a2 = 90;
+let a3 = 89;
+if (a1 > a2) {
+  console.log(" the a1 value larger ");
+}
+if (a2 > a3) {
+  console.log("The a2 value thhe larger number ");
+} else {
+  console.log(" The a3 value islarger number ");
+}</code></pre>
+            </div>
+            <button class="run-program-btn" data-prog-id="prog-2">▶ Run Program Live</button>
+            <div class="live-console-output" id="console-prog-2">Click Run Program Live to view execution logs...</div>
+          </article>
+
+          <!-- Program 3 -->
+          <article class="practice-program-card glow-card" id="prog-3">
+            <span class="practice-badge">Program 03</span>
+            <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:0.75rem; color:var(--text-primary);">3. Count / Print Even Numbers</h3>
+            <div class="program-question-box"><strong>Question:</strong> Iterate through an array of numbers and print elements divisible by 2.</div>
+            <div class="code-block-container">
+              <div class="code-header"><span>Original Source Code</span><button class="copy-code-btn">Copy</button></div>
+              <pre><code>let numbers = [10, 15, 20, 25, 30, 35];
+
+for (let i = 0; i <= numbers.length; i++) {
+  if (numbers[i] % 2 == 0) {
+    console.log(numbers[i]);
+  }
+}</code></pre>
+            </div>
+            <button class="run-program-btn" data-prog-id="prog-3">▶ Run Program Live</button>
+            <div class="live-console-output" id="console-prog-3">Click Run Program Live to view execution logs...</div>
+          </article>
+
+          <!-- Program 4 -->
+          <article class="practice-program-card glow-card" id="prog-4">
+            <span class="practice-badge">Program 04</span>
+            <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:0.75rem; color:var(--text-primary);">4. Find the Sum of Digits</h3>
+            <div class="program-question-box">
+              <strong>Question:</strong> Calculate the sum of all individual digits in a given number (e.g. <code>12345</code>).
+            </div>
+            <div class="logic-steps-list">
+              <strong>Step-by-Step Logic Breakdown:</strong>
+              <ol>
+                <li>Input <code>value = 12345</code>.</li>
+                <li>Convert number to string: <code>String(12345)</code> &rarr; <code>"12345"</code>.</li>
+                <li>Loop through every digit character in sequence.</li>
+                <li>Convert each character back to number using <code>Number(char)</code>.</li>
+                <li>Sum digits: <code>5 + 4 + 3 + 2 + 1 = 15</code>.</li>
+              </ol>
+            </div>
+            <div class="code-block-container">
+              <div class="code-header"><span>Original Source Code</span><button class="copy-code-btn">Copy</button></div>
+              <pre><code>let value = 12345;
+let sum = 0;
+
+let numberString = String(value);
+
+for (let i = 0; i < numberString.length; i++) {
+  sum = sum + Number(numberString[i]);
+}
+
+console.log(sum);</code></pre>
+            </div>
+            <button class="run-program-btn" data-prog-id="prog-4">▶ Run Program Live</button>
+            <div class="live-console-output" id="console-prog-4">Click Run Program Live to view execution logs...</div>
+          </article>
+
+          <!-- Program 5 -->
+          <article class="practice-program-card glow-card" id="prog-5">
+            <span class="practice-badge">Program 05</span>
+            <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:0.75rem; color:var(--text-primary);">5. Find the Sum of Numbers in Array</h3>
+            <div class="program-question-box"><strong>Question:</strong> Iterate through an array of numbers and calculate the total sum.</div>
+            <div class="code-block-container">
+              <div class="code-header"><span>Original Source Code</span><button class="copy-code-btn">Copy</button></div>
+              <pre><code>let num = [10, 20, 10, 30, 20, 40];
+let sum1 = 0;
+for (let i = 0; i < num.length; i++) {
+  sum1 += num[i];
+}
+console.log(sum1);</code></pre>
+            </div>
+            <button class="run-program-btn" data-prog-id="prog-5">▶ Run Program Live</button>
+            <div class="live-console-output" id="console-prog-5">Click Run Program Live to view execution logs...</div>
+          </article>
+
+          <!-- Program 6 -->
+          <article class="practice-program-card glow-card" id="prog-6">
+            <span class="practice-badge">Program 06</span>
+            <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:0.75rem; color:var(--text-primary);">6. Find Whether a Number is Prime</h3>
+            <div class="program-question-box"><strong>Question:</strong> Determine if a given number has exactly two factors (1 and itself).</div>
+            <div class="code-block-container">
+              <div class="code-header"><span>Original Source Code</span><button class="copy-code-btn">Copy</button></div>
+              <pre><code>let prime = 50;
+let counter = 0;
+for (let i = 1; i <= prime; i++) {
+  if (prime % i == 0) {
+    counter++;
+  }
+}
+if (counter == 2) {
+  console.log("prime");
+} else {
+  console.log(" Not a prime");
+}</code></pre>
+            </div>
+            <button class="run-program-btn" data-prog-id="prog-6">▶ Run Program Live</button>
+            <div class="live-console-output" id="console-prog-6">Click Run Program Live to view execution logs...</div>
+          </article>
+
+          <!-- Program 7 -->
+          <article class="practice-program-card glow-card" id="prog-7">
+            <span class="practice-badge">Program 07</span>
+            <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:0.75rem; color:var(--text-primary);">7. Find Common Elements in Two Arrays</h3>
+            <div class="program-question-box"><strong>Question:</strong> Compare elements between two arrays using nested loops and print matching items.</div>
+            <div class="code-block-container">
+              <div class="code-header"><span>Original Source Code</span><button class="copy-code-btn">Copy</button></div>
+              <pre><code>let a = [10, 20, 60, 40];
+let b = [20, 40, 50, 60];
+for (let i = 0; i <= a.length; i++) {
+  for (let j = 0; j < b.length; j++) {
+    if (a[i] == b[j]) {
+      console.log(a[i]);
+    }
+  }
+}</code></pre>
+            </div>
+            <button class="run-program-btn" data-prog-id="prog-7">▶ Run Program Live</button>
+            <div class="live-console-output" id="console-prog-7">Click Run Program Live to view execution logs...</div>
+          </article>
+
+          <!-- Program 8 -->
+          <article class="practice-program-card glow-card" id="prog-8">
+            <span class="practice-badge">Program 08</span>
+            <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:0.75rem; color:var(--text-primary);">8. Find How Many Times a Particular Value Occurs</h3>
+            <div class="program-question-box"><strong>Question:</strong> Count frequency occurrences of a target value inside an array.</div>
+            <div class="code-block-container">
+              <div class="code-header"><span>Original Source Code</span><button class="copy-code-btn">Copy</button></div>
+              <pre><code>let arr = [10, 20, 10, 30, 10, 40];
+let target = 10;
+countnum = 0;
+
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] == target) {
+    countnum++;
+  }
+}
+console.log(countnum);</code></pre>
+            </div>
+            <button class="run-program-btn" data-prog-id="prog-8">▶ Run Program Live</button>
+            <div class="live-console-output" id="console-prog-8">Click Run Program Live to view execution logs...</div>
+          </article>
+
+          <!-- Program 9 -->
+          <article class="practice-program-card glow-card" id="prog-9">
+            <span class="practice-badge">Program 09</span>
+            <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:0.75rem; color:var(--text-primary);">9. Count Vowels in String</h3>
+            <div class="program-question-box"><strong>Question:</strong> Iterate through a string and count how many vowels (a, e, i, o, u) it contains.</div>
+            <div class="code-block-container">
+              <div class="code-header"><span>Original Source Code</span><button class="copy-code-btn">Copy</button></div>
+              <pre><code>let text = "javascript";
+let count = 0;
+
+for (let i = 0; i < text.length; i++) {
+  if (text[i] === "a" || text[i] === "e" || text[i] === "i" || text[i] === "o" || text[i] === "u") {
+    count++;
+  }
+}
+
+console.log(count);</code></pre>
+            </div>
+            <button class="run-program-btn" data-prog-id="prog-9">▶ Run Program Live</button>
+            <div class="live-console-output" id="console-prog-9">Click Run Program Live to view execution logs...</div>
+          </article>
+
+        </section>
+
+        <!-- JS Interview Questions Accordion -->
+        <section class="interview-section" id="js-interview">
+          <div class="interview-header">
+            <h2 class="interview-title">💡 15 Essential JavaScript Interview Questions</h2>
+            <p style="color:var(--text-secondary); margin-top:0.25rem;">Core concepts asked in frontend engineering interviews.</p>
+          </div>
+
+          <div class="accordion-list">
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>1. What is the difference between == and === in JavaScript?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                <code>==</code> performs implicit type conversion before comparison. <code>===</code> evaluates strict equality comparing both value AND data type without coercion.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>2. What is Closure in JavaScript?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                A closure gives an inner function access to an outer function's scope variables even after the outer function has executed and returned.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>3. Explain Event Bubbling vs Event Capturing.</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                <strong>Bubbling</strong> travels upwards from target element to parent document nodes. <strong>Capturing</strong> travels downwards from window root to the target element.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>4. What is the Event Loop in JavaScript?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                The Event Loop continuously checks if the Call Stack is empty and moves callbacks from the Microtask/Task Queue into the Call Stack for execution.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>5. What is the difference between let, const, and var?</span>
+                <span class="accordion-icon">&darr;</span>
+              </button>
+              <div class="accordion-content">
+                <code>var</code> is function-scoped and hoisted. <code>let</code> and <code>const</code> are block-scoped and exist in the Temporal Dead Zone until declared. <code>const</code> prevents variable identifier reassignment.
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-brand-title">Frontend Study Hub</div>
+        <div class="footer-brand-desc">Master JavaScript programming, ES6+ features, logic programs, and DOM events.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home Dashboard</a></li>
+          <li><a href="html.html">HTML Guide</a></li>
+          <li><a href="css.html">CSS Guide</a></li>
+          <li><a href="tailwind.html">Tailwind CSS Guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="source.html">Original Source Code</a></li>
+          <li><a href="#js-practice">JS Practice Sandbox</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Frontend Development Learning Hub.</div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/source-viewer.js"></script>
+</body>
+</html>
